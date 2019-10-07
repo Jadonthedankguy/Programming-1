@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rolling Dice!</title>
+    </head>
+
+    <body>
+        <script>
+            var dice1 = Math.random(1,6);
+            var dice2 = Math.random(1,6);
+            var rolleddoubles = dice1 == dice2;
+            if(rolleddoubles == true){
+                document.open();
+                document.write("<h1>You rolled two </h1> + dice1 + <h1>!</h1>");
+                document.close
+            }else if(dice1 != true){
+                document.open();
+                document.write("<h1>You rolled a </h1> + dice1 + <h1>and a </h1> + dice2 + <h1>!</h1>")
+            }
+        </script>
+    </body>
+</html>
