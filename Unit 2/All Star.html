@@ -11,9 +11,13 @@
             var rebounds = prompt("How many rebounds did you get in basketball spongeboi me bob?");
 
             if(points == 25 || points >= 10 || rebounds >= 10 || assists >= 10) {
-                print("Wow, you did it spongeboi me bob, HEY NOW YOU'RE AN ALL STAR GET YOUR GAME ON GO PLAY!");
+                document.open();
+                document.write(<h1>Wow, you did it spongeboi me bob, HEY NOW YOU'RE AN ALL STAR GET YOUR GAME ON GO PLAY!</h1>);
+                document.close();
             }else if(points != 25 || point < 10 || rebounds < 10 || assists < 10){
-                print("Spongeboi me bob, you've ruined us, YOU'RE FIRED SPONGEBOB! *sad spongebob noises*");
+                document.open();
+                document.write(<h1>Spongeboi me bob, you've ruined us, YOU'RE FIRED SPONGEBOB! *sad spongebob noises*</h1>);
+                document.close();
             }
         </script>
     </body>
