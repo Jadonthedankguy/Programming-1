@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Worm</title>
+    </head>
+    <body style="background-color:aqua">
+        <canvas id="myCanvas" width="1000" height="1000"></canvas>
+        <script>
+        var canvas =  document.getElementById('myCanvas');
+		var context = canvas.getContext('2d');
+		var centerX = canvas.width / 2;
+		var centerY = canvas.height / 2;
+		var CIRCLE_RADIUS = 80;
+        
+            NUM_CIRCLES = 25;
+            for(i = 0; i < NUM_CIRCLES; i++) {
+                var x = 500;
+                if(i >= 0){
+                context.beginPath();
+                context.arc(x, 300, CIRCLE_RADIUS, 0, 2 * Math.PI, false);
+                context.fillStyle = 'red';
+                context.fill();
+                context.closePath();
+                x++;
+                }
+            }   
+        </script>
+    </body>
+</html>
