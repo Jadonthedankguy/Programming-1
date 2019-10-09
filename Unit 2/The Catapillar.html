@@ -6,13 +6,12 @@
     <body style="background-color:aqua">
         <canvas id="myCanvas" width="1000" height="1000"></canvas>
         <script>
-        var canvas =  document.getElementById('myCanvas');
-		var context = canvas.getContext('2d');
-		var centerX = canvas.width / 2;
-		var centerY = canvas.height / 2;
-        var CIRCLE_RADIUS = 80;
-        var x = 500;
-        
+            var canvas =  document.getElementById('myCanvas');
+		    var context = canvas.getContext('2d');
+		    var centerX = canvas.width / 2;
+		    var centerY = canvas.height / 2;
+            var CIRCLE_RADIUS = 80;
+            var x = 500;
             NUM_CIRCLES = 200;
             for(i = 0; i < NUM_CIRCLES; i++) {
                 if(x < 1000 && x > 499) {
