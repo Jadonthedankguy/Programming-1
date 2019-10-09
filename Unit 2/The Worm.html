@@ -10,17 +10,20 @@
 		var context = canvas.getContext('2d');
 		var centerX = canvas.width / 2;
 		var centerY = canvas.height / 2;
-		var CIRCLE_RADIUS = 80;
+        var CIRCLE_RADIUS = 80;
+        var x = 500;
         
             NUM_CIRCLES = 25;
             for(i = 0; i < NUM_CIRCLES; i++) {
-                var x = 500;
+                if(x < 1000 && x > 499) {
+                    x++;
+                }
                 context.beginPath();
+                console.log(x);
                 context.arc(x, 300, CIRCLE_RADIUS, 0, 2 * Math.PI, false);
                 context.fillStyle = 'red';
                 context.fill();
                 context.closePath();
-                x+=20;
             }   
         </script>
     </body>
