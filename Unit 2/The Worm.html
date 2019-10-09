@@ -15,14 +15,12 @@
             NUM_CIRCLES = 25;
             for(i = 0; i < NUM_CIRCLES; i++) {
                 var x = 500;
-                if(i >= 0){
                 context.beginPath();
                 context.arc(x, 300, CIRCLE_RADIUS, 0, 2 * Math.PI, false);
                 context.fillStyle = 'red';
                 context.fill();
                 context.closePath();
                 x++;
-                }
             }   
         </script>
     </body>
