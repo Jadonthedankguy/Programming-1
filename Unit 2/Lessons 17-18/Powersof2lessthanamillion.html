@@ -7,7 +7,9 @@
     <body>
         <script>
             for(i = 0; i < 1000000; i+=1 * 2){
-                console.log(i);
+               document.open();
+               document.write(i);
+               document.close();
             }
         </script>
     </body>
