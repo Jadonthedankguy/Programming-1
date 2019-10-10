@@ -5,8 +5,9 @@
     </head>
     <body>
         <script>
-            diceRoll = Math.floor(Math.random()*1+6);
+            
             for(i = 0; i <= 100; i++){
+                diceRoll = Math.floor(Math.random() * 6) + 1;         
                 document.open();
                 document.write("You rolled a " + diceRoll + "!");
                 document.close();
