@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            diceRoll = Randomizer.nextInt(1, 6);
+            diceRoll = Math.floor(Math.random(1) + 6);
             for(i = 0; i <= 100; i++){
                 console.log("You rolled a " + diceRoll + "!");
             }
