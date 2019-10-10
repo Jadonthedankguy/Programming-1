@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Randomly Colored Square</title>
+    </head>
+
+    <body>
+        <canvas id="myCanvas" width="1000" height="1000"></canvas>
+        <script>
+            var SIDE_LENGTH = 200;
+            var canvas =  document.getElementById('myCanvas');
+		    var context = canvas.getContext('2d');
+            context.beginPath();
+            context.rect(100,150,SIDE_LENGTH,SIDE_LENGTH);
+            context.fillStyle = "rgb("+Math.floor(Math.random()* 256 + 0)+","+Math.floor(Math.random()* 256 + 0)+","+Math.floor(Math.random()* 256 + 0)+")";
+            context.fill();
+            context.lineWidth = 7;
+            context.closePath();
+        </script>
+    </body>
+</html>
