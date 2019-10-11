@@ -7,6 +7,7 @@
     <body>
         <canvas id="myCanvas" width="2000" height="1000"></canvas>
         <script>
+            var Startbutton = document.creatElement("BUTTON");
             canvas = document.getElementById("myCanvas");
             context = canvas.getContext("2d");
             var NUM_CLOUDS = 200;
@@ -28,8 +29,9 @@
             context.stroke();
             context.closePath();
             context.beginPath();
-            context.font = "30px Arial";
-            context.fillText("Garfielf and John Fighting Game", 10, 50);
+            context.font = "60px Arial";
+            context.fillStyle = "red";
+            context.fillText("Garfielf and John Fighting Game", 500, 450);
         </script>
     </body>
 </html>
