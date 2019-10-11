@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inventory</title>
+    </head>
+
+    <body>
+        <script>
+            var totalInventory = 20;
+            while(totalInventory > 0) {
+                var itemsBought = prompt("How many items would you like to buy?");
+                totalInventory = totalInventory - itemsBought;
+                document.open();
+                document.write("You have bought" + itemsBought + " Bananas we now have " + totalInventory + " Bananas.");
+                document.close();
+            }
+        </script>
+    </body>
+</html>
