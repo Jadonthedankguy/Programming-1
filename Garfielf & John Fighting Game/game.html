@@ -5,18 +5,30 @@
     </head>
 
     <body>
-        <canvas id="myCanvas" width="1000" height="1000"></canvas>
+        <canvas id="myCanvas" width="2000" height="1000"></canvas>
         <script>
             canvas = document.getElementById("myCanvas");
             context = canvas.getContext("2d");
-
+            var NUM_CLOUDS = 200;
+            var CLOUD_RADIUS = 100;
+            var cloudX = 200;
+            var cloudY = 200;
             context.beginPath();
-            context.rect(100, 100, 1000, 1000);
+            context.rect(100, 100, 1500, 1500);
             context.fillStyle = "rgb(5, 181, 250)";
             context.fill();
             context.strokeStyle = "black";
             context.stroke();
-            context.endPath();
+            context.closePath();
+            context.beginPath();
+            context.arc(cloudX, 200, CLOUD_RADIUS, 0, 2 * Math.PI, false);
+            context.fillStyle = "white";
+            context.fill();
+            context.strokeStyle = "black";
+            context.stroke();
+            context.closePath();
+            
+            
             console.log("Lucas stole my idea, and also Noah, no ones cares.");
         </script>
     </body>
