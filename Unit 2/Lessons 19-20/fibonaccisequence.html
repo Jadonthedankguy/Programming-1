@@ -6,12 +6,16 @@
 
     <body>
         <script>
-            i = 0;
-            while(i < 13) {
-                i++;
-                document.open();
-                document.write(i + "<br>");
-                document.close();
+             var next = 1;
+             var first = 0;
+             var second = 1;
+             var i = 0;
+             while(i <= 13) {
+                next = first + second;
+                first = second;
+                second = next;
+                document.write(next + "<br>");             
+                i++;            
             }
         </script>
     </body>
