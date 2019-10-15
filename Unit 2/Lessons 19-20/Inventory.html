@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inventory</title>
+    </head>
+
+    <body>
+        <script>
+            totalstock = 20;
+            while(totalstock >= 0) {
+                amountbought = prompt("How much would you like to buy?");
+                if(totalstock == 0){
+                    document.write("Sorry, we're out of stock!");
+                }else if(totalstock > 0){
+                    document.write("We currently have " + totalstock);
+                    totalstock = totalstock - amountbought;
+                    document.write("We now have " + totalstock + " items left in stock, shop soon!");
+                }
+            }
+        </script>
+    </body>
+</html>
