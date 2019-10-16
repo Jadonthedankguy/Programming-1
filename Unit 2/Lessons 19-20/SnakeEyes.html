@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snake Eyes</title>
+    </head>
+
+    <body>
+        <script>
+            while(true){
+                var diceroll1 = Math.floor(Math.random() * 6 + 1);
+                var diceroll2 = Math.floor(Math.random() * 6 + 1);
+                document.write("You rolled a " + diceroll1 + " and a " + diceroll2 + "!" + "<br>");
+                if(diceroll1 == 1 && diceroll2 == 1){
+                    document.write("You rolled snake eyes!");
+                    break;
+                }
+            }
+        </script>
+    </body>
+</html>
