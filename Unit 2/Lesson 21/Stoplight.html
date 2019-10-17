@@ -9,13 +9,17 @@
         <script>
             drawStopLight();
             
-            function drawCircle(radius, color, x, y){
+            function drawCircle(radius, color, strokeColor, x, y){
             var canvas = document.getElementById("myCanvas");
             var context = canvas.getContext("2d");
 
             context.beginPath();
             context.arc(x, y, radius, 0, Math.PI * 2, false);
             context.fillStyle = color;
+            context.fill();
+            context.lineWidth = 5;
+            context.strokeStyle = strokeColor;
+            context.stroke();
             }
             
             function drawGrayRect(width,height){
@@ -30,8 +34,11 @@
                 context.fill();
             }
             function drawStopLight(){
+                
                 drawGrayRect(300,500);
-                drawCircle(100, Color.red, 500, 100);
+                drawCircle(50, 'red', 'black', 650, 900);
+                drawCircle(50, 'yellow', 'black', 650, 750);
+                drawCircle(50, 'green', 'black', 650, 600);
             }
         </script>
     </body>
