@@ -5,17 +5,18 @@
     </head>
 
     <body>
-        <canvas id="myCanvas" width="1000" height ="1000"></canvas>
+        <canvas id="myCanvas" width="400" height ="350"></canvas>
         <script>
-            horizontalLine(200,300);
-            var canvas = document.getElementById("myCanvas");
-            var context = canvas.getContext("2d");
+            horizontalLine(200,400);
+            
 
-            function horizontalLine(y, length){
+            function horizontalLine(y,endX){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
                 var x = 0;
-                canvas.beginPath();
+                context.beginPath();
                 context.moveTo(x,y);
-                context.lineTo(y,y);
+                context.lineTo(endX,y);
                 context.stroke();
             }
         </script>
