@@ -7,7 +7,7 @@
     <body>
         <canvas id="myCanvas" width="1000" height ="1000"></canvas>
         <script>
-            horizontalLine(5,15);
+            horizontalLine(200,300);
             var canvas = document.getElementById("myCanvas");
             var context = canvas.getContext("2d");
 
@@ -15,7 +15,7 @@
                 var x = 0;
                 canvas.beginPath();
                 context.moveTo(x,y);
-                context.lineTo(y,length);
+                context.lineTo(y,y);
                 context.stroke();
             }
         </script>
