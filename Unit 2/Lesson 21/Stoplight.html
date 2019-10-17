@@ -8,26 +8,30 @@
         <canvas id="myCanvas" width="1000" height ="1000"></canvas>
         <script>
             drawStopLight();
+            
             function drawCircle(radius, color, x, y){
-	        var circle = new Circle(radius);
-	        circle.setColor(color);
-	        circle.setPosition(x, y);
-	        add(circle);
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+            context.beginPath();
+            context.arc(x, y, radius, 0, Math.PI * 2, false);
+            context.fillStyle = color;
             }
+            
             function drawGrayRect(width,height){
-                var canvas = document.getElementbyId("myCanvas");
+                var canvas = document.getElementById("myCanvas");
                 var context = canvas.getContext("2d");
                 var x = 1000 / 2;
                 var y = 1000 / 2;
 
                 context.beginPath();
                 context.rect(x, y, width, height);
-                context.fillStyle = 'Color.gray';
+                context.fillStyle = 'gray';
                 context.fill();
-                context.closePath();
             }
             function drawStopLight(){
                 drawGrayRect(300,500);
+                drawCircle(100, Color.red, 500, 100);
             }
         </script>
     </body>
