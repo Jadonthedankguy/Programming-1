@@ -7,6 +7,12 @@
     <body>
         <canvas id="myCanvas" width="2000" height="1000"></canvas>
         <script>
+
+            window.onload = function(){
+                document.addEventListener('click', mouseClicked, false);
+                canvas = document.getElementById("myCanvas");
+                context = canvas.getContext("2d");
+            }
             function drawCloud(x,y,radius){
                 context.beginPath();
                 context.arc(x, y, radius, 0, 2 * Math.PI, false);
@@ -24,8 +30,7 @@
                      (a.x > (b.x + b.width))
                 );
     }
-           canvas = document.getElementById("myCanvas");
-            context = canvas.getContext("2d");
+          
             
             context.beginPath();
             context.rect(100, 100, 1500, 1500);
