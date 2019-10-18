@@ -7,13 +7,26 @@
     <body>
         <canvas id="myCanvas" width="2000" height="1000"></canvas>
         <script>
-            
-            canvas = document.getElementById("myCanvas");
+            function drawCloud(x,y,radius){
+                context.beginPath();
+                context.arc(x, y, radius, 0, 2 * Math.PI, false);
+                context.fillStyle = "white";
+                context.fill();
+                context.strokeStyle = "black";
+                context.stroke();
+                context.closePath();
+            }
+                function isCollide(a, b) {
+                return !(
+                    ((a.y + a.height) < (b.y)) ||
+                    (a.y > (b.y + b.height)) ||
+                    ((a.x + a.width) < b.x) ||
+                     (a.x > (b.x + b.width))
+                );
+    }
+           canvas = document.getElementById("myCanvas");
             context = canvas.getContext("2d");
-            var NUM_CLOUDS = 200;
-            var CLOUD_RADIUS = 100;
-            var cloudX = 200;
-            var cloudY = 200;
+            
             context.beginPath();
             context.rect(100, 100, 1500, 1500);
             context.fillStyle = "rgb(5, 181, 250)";
@@ -22,16 +35,9 @@
             context.stroke();
             context.closePath();
             context.beginPath();
-            context.arc(cloudX, 200, CLOUD_RADIUS, 0, 2 * Math.PI, false);
-            context.fillStyle = "white";
-            context.fill();
-            context.strokeStyle = "black";
-            context.stroke();
-            context.closePath();
-            context.beginPath();
-            context.font = "60px Arial";
+            context.font = "50px Arial";
             context.fillStyle = "red";
-            context.fillText("Garfielf and John Fighting Game", 500, 450);
+            context.fillText("Garfielf and the quest for the golden lasaga", 500, 450);
         </script>
     </body>
 </html>
