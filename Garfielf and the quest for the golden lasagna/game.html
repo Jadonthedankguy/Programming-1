@@ -2,16 +2,29 @@
 <html>
     <head>
         <title>Garfielf and the quest for the golden lasaga</title>
+        <style>
+            .button {
+                    background-color: #ebc934; /* Green */
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+        </style>
     </head>
 
     <body>
         <canvas id="myCanvas" width="2000" height="1000"></canvas>
         <script>
+         canvas = document.getElementById("myCanvas");
+         context = canvas.getContext("2d");
 
             window.onload = function(){
                 document.addEventListener('click', mouseClicked, false);
-                canvas = document.getElementById("myCanvas");
-                context = canvas.getContext("2d");
             }
             function drawCloud(x,y,radius){
                 context.beginPath();
@@ -39,18 +52,6 @@
 
       if(btn.checkClicked()) alert("XD");
     }
-    function Button(xL, xR, yT, yB){
-
-        this.xLeft = xL;
-        this.xRight = xR;
-
-        this.yTop = yT;
-        this.yBottom = yB;
-    }
-
-
-          
-            
             context.beginPath();
             context.rect(100, 100, 1500, 1500);
             context.fillStyle = "rgb(5, 181, 250)";
