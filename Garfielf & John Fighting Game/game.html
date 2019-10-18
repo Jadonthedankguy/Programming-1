@@ -30,6 +30,25 @@
                      (a.x > (b.x + b.width))
                 );
     }
+
+    function mouseClicked(e){
+
+      mouseX = e.pageX - ctx.offsetLeft;
+
+      mouseY = e.pageY - ctx.offsetTop;
+
+      if(btn.checkClicked()) alert("XD");
+    }
+    function Button(xL, xR, yT, yB){
+
+        this.xLeft = xL;
+        this.xRight = xR;
+
+        this.yTop = yT;
+        this.yBottom = yB;
+    }
+
+
           
             
             context.beginPath();
