@@ -12,8 +12,7 @@
 		var centerY = canvas.height / 2;
         var CIRCLE_RADIUS = 80;
         var x = 500;
-        
-            NUM_CIRCLES = 200;
+        NUM_CIRCLES = 200;
             for(i = 0; i < NUM_CIRCLES; i++) {
                 if(x < 1000 && x > 499) {
                     x++;
@@ -23,7 +22,6 @@
                 context.arc(x, 300, CIRCLE_RADIUS, 0, 2 * Math.PI, false);
                 context.fillStyle = 'red';
                 context.fill();
-                context.closePath();
             }   
         </script>
     </body>
