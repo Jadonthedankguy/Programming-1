@@ -8,16 +8,18 @@
         <script>
             isEven();
             function isEven(){
-                    var numbool = false;
-                    var evenNum = evenPrompt % 2;
+                    
+                    
                     while(true){
+                        var numbool = false;
                         var evenPrompt = prompt("Type in number");
+                        var evenNum = evenPrompt % 2;
                         if(evenNum == 0){
                             numbool = true;
-                            document.write("Even = " + numbool);
+                            document.write("Even = " + numbool + "<br>");
                             break;
                     }
-                    document.write("Even = " + numbool);
+                    document.write("Even = " + numbool + "<br>");
                 }
             }
         </script>
