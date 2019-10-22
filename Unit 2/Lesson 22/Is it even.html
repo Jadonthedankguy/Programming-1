@@ -9,16 +9,13 @@
             isEven();
             function isEven(){
                     var numbool = false;
-                    var evenNum = evenPrompt % evenPrompt;
-                    var evenPrompt = prompt("Type in a number!");
-                    var evenNum2 = evenPrompt2 % evenPrompt2;
+                    var evenNum = evenPrompt % 2;
                     while(true){
-                        if(evenNum == 0 || evenNum2 == 0){
+                        var evenPrompt = prompt("Type in number");
+                        if(evenNum == 0){
                             numbool = true;
                             document.write("Even = " + numbool);
                             break;
-                    }else{
-                       var evenprompt2 = prompt("Type in a number again please!");
                     }
                     document.write("Even = " + numbool);
                 }
