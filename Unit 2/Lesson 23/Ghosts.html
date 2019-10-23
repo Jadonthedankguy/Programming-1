@@ -10,11 +10,39 @@
             var canvas = document.getElementById("myCanvas");
             var context = canvas.getContext("2d");
             context.beginPath();
-            context.arc(100, 200, 10, 0, 2 * Math.PI, false);
+            context.arc(100, 200, 50, 0, 2 * Math.PI, false);
             context.fillStyle = "red";
             context.fill();
+            context.closePath();
+            context.beginPath();
+            context.rect(50,200,100,100);
+            context.fillStyle = 'red';
+            context.fill();
+            context.closePath();
+            context.beginPath();
+            context.arc(70,300,20,0,2 * Math.PI, false);
+            context.fillStyle = 'red';
+            context.fill();
+            context.closePath();
+            context.beginPath();
+            context.arc(105,300,20,0,2 * Math.PI, false);
+            context.fillStyle = 'red';
+            context.fill();
+            context.closePath();
+            context.beginPath();
+            context.arc(130,300,20,0,2 * Math.PI, false);
+            context.fillStyle = 'red';
+            context.fill();
+            context.closePath();
+            context.beginPath();
+            context.arc(80,200,20,0,2 * Math.PI, false);
+            context.fillStyle = 'white';
+            context.fill();
+            context.closePath();
+            context.beginPath();
+            
 
-            function drawGhost(x,y,color){
+            function drawGhost(centerX,centerY,color){
                 
             }
         </script>
