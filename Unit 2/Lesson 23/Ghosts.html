@@ -9,41 +9,44 @@
         <script>
             var canvas = document.getElementById("myCanvas");
             var context = canvas.getContext("2d");
-            context.beginPath();
-            context.arc(100, 200, 50, 0, 2 * Math.PI, false);
-            context.fillStyle = "red";
-            context.fill();
-            context.closePath();
-            context.beginPath();
-            context.rect(50,200,100,100);
-            context.fillStyle = 'red';
-            context.fill();
-            context.closePath();
-            context.beginPath();
-            context.arc(70,300,20,0,2 * Math.PI, false);
-            context.fillStyle = 'red';
-            context.fill();
-            context.closePath();
-            context.beginPath();
-            context.arc(105,300,20,0,2 * Math.PI, false);
-            context.fillStyle = 'red';
-            context.fill();
-            context.closePath();
-            context.beginPath();
-            context.arc(130,300,20,0,2 * Math.PI, false);
-            context.fillStyle = 'red';
-            context.fill();
-            context.closePath();
-            context.beginPath();
-            context.arc(80,200,20,0,2 * Math.PI, false);
-            context.fillStyle = 'white';
-            context.fill();
-            context.closePath();
-            context.beginPath();
-            
+            //drawCircle(100,200,50,'red');
+            //drawRect(50,200,100,100,'red');
+            //drawCircle(70,300,20,'red');
+            //drawCircle(100,300,20,'red');
+            //drawCircle(130,300,20,'red');
+            //drawCircle(80,200,20,'white');
+           // drawCircle(125,200,20,'white');
+            //drawCircle(125,200,10,'#32a8a8');
+           // drawCircle(80,200,10,'#32a8a8');
+           drawGhost(50,200,'red','#32a8a8');
+           drawGhost(200,50,'green','#32a8a8');
 
-            function drawGhost(centerX,centerY,color){
-                
+            //Remember, the circle shape on the top of the ghost is CenterX + 50
+
+            function drawGhost(centerX,centerY,color,eyecolor){
+            drawCircle(centerX + 50,centerY,50,color);
+            drawRect(centerX,centerY,100,100,color);
+            drawCircle(centerX + 20,centerY + 100,20,color);
+            drawCircle(centerX + 50,centerY + 100,20,color);
+            drawCircle(centerX + 80,centerY + 100,20,color);
+            drawCircle(centerX + 30,centerY,20,'white');
+            drawCircle(centerX + 75,centerY,20,'white');
+            drawCircle(centerX + 75,centerY,10,eyecolor);
+            drawCircle(centerX + 30,centerY,10,eyecolor);
+            }
+            function drawCircle(x,y,radius,color){
+            context.beginPath();
+            context.arc(x,y,radius,0,2 * Math.PI, false);
+            context.fillStyle = color;
+            context.fill();
+            context.closePath();
+            }
+            function drawRect(x,y,width,height,color){
+                context.beginPath();
+                context.rect(x,y,width,height);
+                context.fillStyle = color;
+                context.fill();
+                context.closePath();
             }
         </script>
     </body>
