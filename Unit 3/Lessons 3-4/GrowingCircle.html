@@ -23,28 +23,29 @@
         <script>
         window.onload = function() {
             var growingcircle = new Circle(20);
+            console.log("hi");
 
             function start() {
                 add(growingcircle);
 
-                setTimer(grow,500);
+                setTimer(grow,2000);
             }
             function grow(){
                 var radiuscounter = growingcircle.getRadius();
-                var MAX_RADIUS = 100;
+                var MAX_RADIUS = 80;
 
-                radiuscounter+=10;
+                radiuscounter++;
 
                 if(radiuscounter = MAX_RADIUS){
                     stopTimer(grow);
                 }
 
-                growingcircle.setRadius(radiuscounter)
-
-                if (typeof start === 'function') {
+                growingcircle.setRadius(radiuscounter);
+            }
+           if (typeof start === 'function') {
             start();
            }
-            }
+            
         };
         </script>
     </body>
