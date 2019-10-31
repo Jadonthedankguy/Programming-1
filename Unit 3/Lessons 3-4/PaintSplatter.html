@@ -28,9 +28,7 @@
                 function start() {
                     setTimer(splatter,100);
 
-                    if(circlecounter == Circlespersplatter){
-                        stopTimer(splatter);
-                    }
+                    
                 }
 
                 function splatter(){
@@ -38,6 +36,9 @@
                     add(paintsplatter);
                     paintsplatter.move(Randomizer.nextInt(0,500),Randomizer.nextInt(0,500));
                     circlecounter++;
+                    if(circlecounter == Circlespersplatter){
+                        stopTimer(splatter);
+                    }
                 }
                
                if (typeof start === 'function') {
