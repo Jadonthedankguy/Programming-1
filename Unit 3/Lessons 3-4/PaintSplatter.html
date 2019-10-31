@@ -26,7 +26,7 @@
                 var Circlespersplatter = 20;
     
                 function start() {
-                    setTimer(splatter,1);
+                    setTimer(splatter,100);
 
                     if(circlecounter == Circlespersplatter){
                         stopTimer(splatter);
@@ -36,6 +36,7 @@
                 function splatter(){
                     var paintsplatter = new Circle(Randomizer.nextInt(MIN_RADIUS, MAX_RADIUS));
                     add(paintsplatter);
+                    paintsplatter.move(Randomizer.nextInt(0,500),Randomizer.nextInt(0,500));
                     circlecounter++;
                 }
                
