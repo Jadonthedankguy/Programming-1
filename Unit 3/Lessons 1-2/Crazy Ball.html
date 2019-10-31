@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
 
 <style>
 canvas {
@@ -31,6 +31,9 @@ class="codehs-editor-canvas"></canvas>
 window.onload = function() {
     var RADIUS = 100;
 var ball;
+function setup(){
+    createCanvas(width,height);
+}
 function start(){
 	ball = new Circle(20);
     add(ball);
