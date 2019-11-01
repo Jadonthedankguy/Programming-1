@@ -22,22 +22,25 @@
         </canvas>
         <script>
         window.onload = function() {
-            
+            var x = 5;
+            var y = 5;
 
             function start() {
-                setTimer(wall,200)
+                setTimer(wall,200);
+                
             }
-            
+
             function drawCircle(x,y,radius,color){
-                circle = new Circle(radius);
-                circle.color(color);
+                console.log('hello');
+                var circle = new Circle(radius);
+                circle.setColor(color);
                 circle.setPosition(x,y);
                 add(circle);
             }
+            
 
             function wall(){
-                var x = 5;
-                var y = 5;
+                console.log('hi');
                 drawCircle(x,y,20,Randomizer.nextColor());
                 x+=5;
             }
