@@ -6,7 +6,7 @@
         <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
         <title>Growing Circle Animation</title>
         <style>
-            canvas{
+            .window-forcirclewall{
                 border: 3px black;
                 display: inline-block;
                 vertical-align: top;
@@ -18,7 +18,7 @@
 
     <body>
         <canvas 
-        width=500 height=500 class="codehs-editor-canvas">
+        width=500 height=500 class="window-forcirclewall">
         </canvas>
         <script>
         window.onload = function() {
@@ -44,7 +44,7 @@
                 drawCircle(x,y,20,Randomizer.nextColor());
                 x+=5;
                 if(x == 500){
-                    y+=5;
+                    y-=5;
                     x = 5;
                 }
             }
