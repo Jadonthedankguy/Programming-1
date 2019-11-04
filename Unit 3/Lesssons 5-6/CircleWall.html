@@ -43,6 +43,10 @@
                 console.log('hi');
                 drawCircle(x,y,20,Randomizer.nextColor());
                 x+=5;
+                if(x == 500){
+                    y+=5;
+                    x = 5;
+                }
             }
 
            if (typeof start === 'function') {
