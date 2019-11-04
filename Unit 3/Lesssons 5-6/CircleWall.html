@@ -27,10 +27,6 @@
 
             function start() {
                 setTimer(wall,200);
-                
-                if(y == 500){
-                    stopTimer(wall);
-                }
             }
 
             function drawCircle(x,y,radius,color){
@@ -45,7 +41,7 @@
             function wall(){
                 console.log('hi');
                 drawCircle(x,y,20,Randomizer.nextColor());
-                x+=10;
+                x+=5;
                 if(x == 500){
                     y+=40;
                     x = 5;
