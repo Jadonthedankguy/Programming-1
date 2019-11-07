@@ -53,9 +53,9 @@
         function checkWalls(){
             // Bounce off right wall
             if(ball.getX() > 200){
-                ball.Color = "green";
+                ball.setColor(green);
             }else if(ball.getX() < 200){
-                ball.Color = "blue";
+                ball.setColor(blue);
             }
             if(ball.getX() + ball.getRadius() > getWidth()){
                 dx = -dx;
