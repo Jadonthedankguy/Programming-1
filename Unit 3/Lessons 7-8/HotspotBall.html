@@ -48,15 +48,18 @@
         }
         function draw(){
             checkWalls();
+            if(ball.getX() > 200){
+                ball.setColor(Randomizer.nextColor());
+            }else if(ball.getX() < 200){
+                ball.setColor(Randomizer.nextColor());
+            }
             ball.move(dx, dy);
         }
         function checkWalls(){
+            //Set color depending on what side of the screen
+            
+
             // Bounce off right wall
-            if(ball.getX() > 200){
-                ball.setColor(green);
-            }else if(ball.getX() < 200){
-                ball.setColor(blue);
-            }
             if(ball.getX() + ball.getRadius() > getWidth()){
                 dx = -dx;
             }
