@@ -54,6 +54,8 @@
             // Bounce off right wall
             if(ball.getX() > 200){
                 ball.Color = "green";
+            }else if(ball.getX() < 200){
+                ball.Color = "blue";
             }
             if(ball.getX() + ball.getRadius() > getWidth()){
                 dx = -dx;
