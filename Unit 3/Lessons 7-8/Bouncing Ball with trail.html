@@ -99,6 +99,9 @@
             }
         }
         function checkWalls(){
+            if(BOUNCE_COUNTER == MAX_BOUNCES){
+                stopTimer(draw);
+            }
             console.log("bruh moment");
             // Bounce off right wall
             if(ball.getX() + ball.getRadius() > getWidth()){
