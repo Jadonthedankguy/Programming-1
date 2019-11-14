@@ -107,6 +107,10 @@
         function checkWalls(){
             
             console.log("bruh moment");
+            // Check if non-trail ball has bounced 20 times
+            if(BOUNCE_COUNTER == MAX_BOUNCES){
+                stopTimer(draw);
+            }
             // Bounce off right wall
             if(ball.getX() + ball.getRadius() > getWidth()){
                 dx = -dx;
