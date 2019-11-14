@@ -47,7 +47,7 @@
             var tailball = new Circle(10);
             ball = new Circle(20);
             ball.setPosition(100, 100);
-            tailball.setPostition(100 - 50, 100);
+            tailball.setPosition(100 - 50, 100);
             add(ball);
             add(tailball);
             
@@ -70,28 +70,28 @@
             }
             ball.move(dx, dy);
         }
-        function checkWalls(balltype){
+        function checkWalls(){
             console.log("bruh moment");
             // Bounce off right wall
-            if(balltype.getX() + balltype.getRadius() > getWidth()){
+            if(ball.getX() + ball.getRadius() > getWidth()){
                 dx = -dx;
                BOUNCE_COUNTER++;
             }
             
             // Bounce off left wall
-            if(balltype.getX() - balltype.getRadius() < 0){
+            if(ball.getX() - ball.getRadius() < 0){
                 dx = -dx;
                 BOUNCE_COUNTER++;
             }
             
             // Bounce off bottom wall
-            if(balltype.getY() + balltype.getRadius() > getHeight()){
+            if(ball.getY() + ball.getRadius() > getHeight()){
                 dy = -dy;
                 BOUNCE_COUNTER++;
             }
             
             // Bounce off top wall
-            if(balltype.getY() - balltype.getRadius() < 0){
+            if(ball.getY() - ball.getRadius() < 0){
                 dy = -dy;
                 BOUNCE_COUNTER++;
             }
