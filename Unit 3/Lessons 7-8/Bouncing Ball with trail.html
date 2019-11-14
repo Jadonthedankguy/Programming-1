@@ -39,8 +39,6 @@
         var dy = 4;
         /* This program has a ball bounce around the screen. */
         function start(){
-            var prevx = ball.getX();
-            var prevy = ball.getY();
             var ballX = 100;
             var ballY = 100;
             var BOUNCE_COUNTER = 0;
@@ -55,7 +53,7 @@
             setTimer(trail,20);
         }
         function trail(){
-            tailball.setPosition(prevx - 50, prevy);
+            tailball.setPosition(ball.getX() - 50, ball.getY());
             checkWalls(tailball);
             tailball.move(dx,dy);
         }
