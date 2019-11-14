@@ -34,14 +34,15 @@
         
         <script>
         window.onload = function() {
-            var ball;
+        var ball;
         var dx = 4;
         var dy = 4;
+        var trailball;
         /* This program has a ball bounce around the screen. */
         function start(){
             var ballX = 100;
             var ballY = 100;
-            var trailball = new Circle(10);
+            trailball = new Circle(10);
             ball = new Circle(20);
             ball.setPosition(100, 100);
             add(ball);
@@ -51,15 +52,13 @@
             setTimer(trail,20);
         }
         function trail(){
-            console.log("hello");
             checktrailWalls();
-            console.log("xD");
-            trailball.setPosition(ball.getX() - 50, ball.getY());
+            trailball.setPosition(ball.getX() - 25, ball.getY() - 10);
             trailball.move(dx,dy);
-            if(ball.getX() > 200){
-                ball.setColor(Randomizer.nextColor());
-            }else if(ball.getX() < 200){
-                ball.setColor(Randomizer.nextColor());
+            if(trailball.getX() > 200){
+                trailball.setColor(Randomizer.nextColor());
+            }else if(trailball.getX() < 200){
+                trailball.setColor(Randomizer.nextColor());
             }
         }
 
@@ -82,6 +81,7 @@
             }
             // Bounce off right wall
             if(trailball.getX() + trailball.getRadius() > getWidth()){
+                trailball.setPosition(ball.getX - 20 * -1, ball.getY - 10 * -1);
                 dx = -dx;
                BOUNCE_COUNTER++;
             }
