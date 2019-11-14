@@ -42,8 +42,6 @@
             console.log("hi");
             var ballX = 100;
             var ballY = 100;
-            var BOUNCE_COUNTER = 0;
-            var MAX_BOUNCES = 20;
             var trailball = new Circle(10);
             ball = new Circle(20);
             ball.setPosition(100, 100);
@@ -75,7 +73,13 @@
             ball.move(dx, dy);
         }
         function checktrailWalls(){
+            var BOUNCE_COUNTER = 0;
+            var MAX_BOUNCES = 20;
             console.log("bruh moment");
+            // Check if 20 bounces have happened
+            if(BOUNCE_COUNTER == MAX_BOUNCES){
+                stopTimer(trail);
+            }
             // Bounce off right wall
             if(trailball.getX() + trailball.getRadius() > getWidth()){
                 dx = -dx;
