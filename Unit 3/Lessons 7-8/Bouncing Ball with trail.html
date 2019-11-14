@@ -44,10 +44,10 @@
             var ballY = 100;
             var BOUNCE_COUNTER = 0;
             var MAX_BOUNCES = 20;
-            var tailball = new Circle(10);
+            var trailball = new Circle(10);
             ball = new Circle(20);
             ball.setPosition(100, 100);
-            tailball.setPosition(100 - 50, 100);
+            trailball.setPosition(100 - 50, 100);
             add(ball);
             add(tailball);
             
@@ -57,18 +57,43 @@
         function trail(){
             console.log("hello");
             tailball.setPosition(ball.getX() - 50, ball.getY());
-            checkWalls(tailball);
             tailball.move(dx,dy);
         }
         function draw(){
             console.log("bruh");
-            checkWalls(ball);
+            checkWalls();
             if(ball.getX() > 200){
                 ball.setColor(Randomizer.nextColor());
             }else if(ball.getX() < 200){
                 ball.setColor(Randomizer.nextColor());
             }
             ball.move(dx, dy);
+        }
+        function checktrailWalls(){
+            console.log("bruh moment");
+            // Bounce off right wall
+            if(tailball.getX() + trailball.getRadius() > getWidth()){
+                dx = -dx;
+               BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off left wall
+            if(trailball.getX() - trailball.getRadius() < 0){
+                dx = -dx;
+                BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off bottom wall
+            if(trailball.getY() + trailball.getRadius() > getHeight()){
+                dy = -dy;
+                BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off top wall
+            if(trailball.getY() - trailball.getRadius() < 0){
+                dy = -dy;
+                BOUNCE_COUNTER++;
+            }
         }
         function checkWalls(){
             console.log("bruh moment");
@@ -79,19 +104,19 @@
             }
             
             // Bounce off left wall
-            if(ball.getX() - ball.getRadius() < 0){
+            if(trailball.getX() - trailball.getRadius() < 0){
                 dx = -dx;
                 BOUNCE_COUNTER++;
             }
             
             // Bounce off bottom wall
-            if(ball.getY() + ball.getRadius() > getHeight()){
+            if(trailball.getY() + trailball.getRadius() > getHeight()){
                 dy = -dy;
                 BOUNCE_COUNTER++;
             }
             
             // Bounce off top wall
-            if(ball.getY() - ball.getRadius() < 0){
+            if(trailball.getY() - trailball.getRadius() < 0){
                 dy = -dy;
                 BOUNCE_COUNTER++;
             }
