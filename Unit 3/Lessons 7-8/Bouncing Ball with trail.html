@@ -39,6 +39,7 @@
         var dy = 4;
         /* This program has a ball bounce around the screen. */
         function start(){
+            console.log("hi");
             var ballX = 100;
             var ballY = 100;
             var BOUNCE_COUNTER = 0;
@@ -54,11 +55,13 @@
             setTimer(trail,20);
         }
         function trail(){
+            console.log("hello");
             tailball.setPosition(ball.getX() - 50, ball.getY());
             checkWalls(tailball);
             tailball.move(dx,dy);
         }
         function draw(){
+            console.log("bruh");
             checkWalls(ball);
             if(ball.getX() > 200){
                 ball.setColor(Randomizer.nextColor());
@@ -68,6 +71,7 @@
             ball.move(dx, dy);
         }
         function checkWalls(balltype){
+            console.log("bruh moment");
             // Bounce off right wall
             if(balltype.getX() + balltype.getRadius() > getWidth()){
                 dx = -dx;
