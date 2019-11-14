@@ -47,7 +47,6 @@
             var trailball = new Circle(10);
             ball = new Circle(20);
             ball.setPosition(100, 100);
-            trailball.setPosition(100 - 50, 100);
             add(ball);
             add(tailball);
             
@@ -70,9 +69,6 @@
             ball.move(dx, dy);
         }
         function checktrailWalls(){
-            if(BOUNCE_COUNTER == MAX_BOUNCES){
-                stopTimer(trail);
-            }
             console.log("bruh moment");
             // Bounce off right wall
             if(tailball.getX() + trailball.getRadius() > getWidth()){
@@ -99,9 +95,7 @@
             }
         }
         function checkWalls(){
-            if(BOUNCE_COUNTER == MAX_BOUNCES){
-                stopTimer(draw);
-            }
+            
             console.log("bruh moment");
             // Bounce off right wall
             if(ball.getX() + ball.getRadius() > getWidth()){
