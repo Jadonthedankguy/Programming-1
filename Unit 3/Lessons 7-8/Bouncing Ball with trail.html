@@ -55,8 +55,14 @@
         }
         function trail(){
             console.log("hello");
+            checktrailWalls();
             trailball.setPosition(ball.getX() - 50, ball.getY());
             trailball.move(dx,dy);
+            if(ball.getX() > 200){
+                ball.setColor(Randomizer.nextColor());
+            }else if(ball.getX() < 200){
+                ball.setColor(Randomizer.nextColor());
+            }
         }
         function draw(){
             console.log("bruh");
@@ -71,7 +77,7 @@
         function checktrailWalls(){
             console.log("bruh moment");
             // Bounce off right wall
-            if(tailball.getX() + trailball.getRadius() > getWidth()){
+            if(trailball.getX() + trailball.getRadius() > getWidth()){
                 dx = -dx;
                BOUNCE_COUNTER++;
             }
