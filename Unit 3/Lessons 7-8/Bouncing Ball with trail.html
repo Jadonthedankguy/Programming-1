@@ -105,7 +105,8 @@
             }
         }
         function checkWalls(){
-            
+            var BOUNCE_COUNTER = 0;
+            var MAX_BOUNCES = 20;
             console.log("bruh moment");
             // Check if non-trail ball has bounced 20 times
             if(BOUNCE_COUNTER == MAX_BOUNCES){
