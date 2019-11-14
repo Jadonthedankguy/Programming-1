@@ -39,17 +39,28 @@
         var dy = 4;
         /* This program has a ball bounce around the screen. */
         function start(){
+            var prevx = ball.getX();
+            var prevy = ball.getY();
             var ballX = 100;
             var ballY = 100;
+            var BOUNCE_COUNTER = 0;
+            var MAX_BOUNCES = 20;
             var tailball = new Circle(10);
             ball = new Circle(20);
             ball.setPosition(100, 100);
             add(ball);
+            add(tailball);
             
             setTimer(draw, 20);
+            setTimer(trail,20);
+        }
+        function trail(){
+            tailball.setPosition(prevx - 50, prevy);
+            checkWalls(tailball);
+            tailball.move(dx,dy);
         }
         function draw(){
-            checkWalls();
+            checkWalls(ball);
             if(ball.getX() > 200){
                 ball.setColor(Randomizer.nextColor());
             }else if(ball.getX() < 200){
@@ -57,25 +68,29 @@
             }
             ball.move(dx, dy);
         }
-        function checkWalls(){
+        function checkWalls(balltype){
             // Bounce off right wall
-            if(ball.getX() + ball.getRadius() > getWidth()){
+            if(balltype.getX() + balltype.getRadius() > getWidth()){
                 dx = -dx;
+               BOUNCE_COUNTER++;
             }
             
             // Bounce off left wall
-            if(ball.getX() - ball.getRadius() < 0){
+            if(balltype.getX() - balltype.getRadius() < 0){
                 dx = -dx;
+                BOUNCE_COUNTER++;
             }
             
             // Bounce off bottom wall
-            if(ball.getY() + ball.getRadius() > getHeight()){
+            if(balltype.getY() + balltype.getRadius() > getHeight()){
                 dy = -dy;
+                BOUNCE_COUNTER++;
             }
             
             // Bounce off top wall
-            if(ball.getY() - ball.getRadius() < 0){
+            if(balltype.getY() - balltype.getRadius() < 0){
                 dy = -dy;
+                BOUNCE_COUNTER++;
             }
         }
             if (typeof start === 'function') {
