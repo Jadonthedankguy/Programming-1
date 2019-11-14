@@ -49,7 +49,7 @@
             add(trailball);
             
             setTimer(draw, 20);
-            setTimer(trail,20);
+            //setTimer(trail,20);
         }
         function trail(){
             console.log("hello");
@@ -62,9 +62,12 @@
                 ball.setColor(Randomizer.nextColor());
             }
         }
+
         function draw(){
             console.log("bruh");
             checkWalls();
+            
+            console.log("yolo");
             if(ball.getX() > 200){
                 ball.setColor(Randomizer.nextColor());
             }else if(ball.getX() < 200){
@@ -72,6 +75,7 @@
             }
             ball.move(dx, dy);
         }
+
         function checktrailWalls(){
             var BOUNCE_COUNTER = 0;
             var MAX_BOUNCES = 20;
@@ -104,6 +108,7 @@
                 BOUNCE_COUNTER++;
             }
         }
+
         function checkWalls(){
             var BOUNCE_COUNTER = 0;
             var MAX_BOUNCES = 20;
@@ -119,19 +124,19 @@
             }
             
             // Bounce off left wall
-            if(trailball.getX() - trailball.getRadius() < 0){
+            if(ball.getX() - ball.getRadius() < 0){
                 dx = -dx;
                 BOUNCE_COUNTER++;
             }
             
             // Bounce off bottom wall
-            if(trailball.getY() + trailball.getRadius() > getHeight()){
+            if(ball.getY() + ball.getRadius() > getHeight()){
                 dy = -dy;
                 BOUNCE_COUNTER++;
             }
             
             // Bounce off top wall
-            if(trailball.getY() - trailball.getRadius() < 0){
+            if(ball.getY() - ball.getRadius() < 0){
                 dy = -dy;
                 BOUNCE_COUNTER++;
             }
