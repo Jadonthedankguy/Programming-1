@@ -39,7 +39,6 @@
         var dy = 4;
         /* This program has a ball bounce around the screen. */
         function start(){
-            console.log("hi");
             var ballX = 100;
             var ballY = 100;
             var trailball = new Circle(10);
@@ -49,11 +48,12 @@
             add(trailball);
             
             setTimer(draw, 20);
-            //setTimer(trail,20);
+            setTimer(trail,20);
         }
         function trail(){
             console.log("hello");
             checktrailWalls();
+            console.log("xD");
             trailball.setPosition(ball.getX() - 50, ball.getY());
             trailball.move(dx,dy);
             if(ball.getX() > 200){
@@ -64,10 +64,7 @@
         }
 
         function draw(){
-            console.log("bruh");
             checkWalls();
-            
-            console.log("yolo");
             if(ball.getX() > 200){
                 ball.setColor(Randomizer.nextColor());
             }else if(ball.getX() < 200){
@@ -79,7 +76,6 @@
         function checktrailWalls(){
             var BOUNCE_COUNTER = 0;
             var MAX_BOUNCES = 20;
-            console.log("bruh moment");
             // This if statment checks if 20 bounces is equal to the bounce counter, then it'll stop the timer, thus making it less laggy.
             if(BOUNCE_COUNTER == MAX_BOUNCES){
                 stopTimer(trail);
@@ -112,7 +108,6 @@
         function checkWalls(){
             var BOUNCE_COUNTER = 0;
             var MAX_BOUNCES = 20;
-            console.log("bruh moment");
             // Check if non-trail ball has bounced 20 times
             if(BOUNCE_COUNTER == MAX_BOUNCES){
                 stopTimer(draw);
