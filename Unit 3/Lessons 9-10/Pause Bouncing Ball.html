@@ -38,30 +38,16 @@
         var is_paused = false;
         var dx = 4;
         var dy = 4;
-        var trailball;
         /* This program has a ball bounce around the screen. */
         function start(){
             var ballX = 100;
             var ballY = 100;
-            trailball = new Circle(10);
             ball = new Circle(20);
             ball.setPosition(100, 100);
             add(ball);
-            add(trailball);
             
             setTimer(draw, 20);
-            setTimer(trail,20);
             mouseClickEvent(pause);
-        }
-        function trail(){
-            checktrailWalls();
-            trailball.setPosition(ball.getX() - 25, ball.getY() - 10);
-            trailball.move(dx,dy);
-            if(trailball.getX() > 200){
-                trailball.setColor(Randomizer.nextColor());
-            }else if(trailball.getX() < 200){
-                trailball.setColor(Randomizer.nextColor());
-            }
         }
 
         function draw(){
@@ -74,46 +60,9 @@
             ball.move(dx, dy);
         }
 
-        function checktrailWalls(){
-            var BOUNCE_COUNTER = 0;
-            var MAX_BOUNCES = 20;
-            // This if statment checks if 20 bounces is equal to the bounce counter, then it'll stop the timer, thus making it less laggy.
-            if(BOUNCE_COUNTER == MAX_BOUNCES){
-                stopTimer(trail);
-            }
-            // Bounce off right wall
-            if(trailball.getX() + trailball.getRadius() > getWidth()){
-                trailball.setPosition(ball.getX - 20 * -1, ball.getY - 10 * -1);
-                dx = -dx;
-               BOUNCE_COUNTER++;
-            }
-            
-            // Bounce off left wall
-            if(trailball.getX() - trailball.getRadius() < 0){
-                dx = -dx;
-                BOUNCE_COUNTER++;
-            }
-            
-            // Bounce off bottom wall
-            if(trailball.getY() + trailball.getRadius() > getHeight()){
-                dy = -dy;
-                BOUNCE_COUNTER++;
-            }
-            
-            // Bounce off top wall
-            if(trailball.getY() - trailball.getRadius() < 0){
-                dy = -dy;
-                BOUNCE_COUNTER++;
-            }
-        }
-
         function checkWalls(){
             var BOUNCE_COUNTER = 0;
             var MAX_BOUNCES = 20;
-            // Check if non-trail ball has bounced 20 times
-            if(BOUNCE_COUNTER == MAX_BOUNCES){
-                stopTimer(draw);
-            }
             // Bounce off right wall
             if(ball.getX() + ball.getRadius() > getWidth()){
                 dx = -dx;
@@ -141,12 +90,15 @@
 
         function pause(e){
             if(is_paused == false){
-                dx = 0;
-                dy = 0;
+                var dx = 0;
+                var dy = 0;
+                ball.move(dx,dy);
                 is_paused = true;
             }else if(is_paused == true){
-                dx = 4;
-                dy = 4;
+                var dx = 4;
+                var dy = 4;
+                ball.move(dx,dy);
+                is_paused == false;
             }
         }
 
