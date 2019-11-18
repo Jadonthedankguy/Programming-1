@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
+        <title>Growing Circle Animation</title>
+        <style>
+            canvas{
+                border: 3px black;
+                display: inline-block;
+                vertical-align: top;
+            }
+        </style>
+    </head>
+
+   
+
+    <body>
+        <canvas 
+        width=500 height=500 class="codehs-editor-canvas">
+        </canvas>
+        <script>
+        window.onload = function() {
+            var growingcircle = new Circle(20);
+            console.log("hi");
+
+            function start() {
+                add(growingcircle);
+
+                setTimer(grow,2000);
+            }
+            function grow(){
+                var radiuscounter = growingcircle.getRadius();
+                var MAX_RADIUS = 80;
+
+                radiuscounter++;
+
+                if(radiuscounter = MAX_RADIUS){
+                    stopTimer(grow);
+                }
+
+                growingcircle.setRadius(radiuscounter);
+            }
+           if (typeof start === 'function') {
+            start();
+           }
+            
+        };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
+        <title>Circle Wall Animation</title>
+        <style>
+            .window-forcirclewall{
+                border: 3px solid black;
+                display: inline-block;
+                vertical-align: top;
+            }
+        </style>
+    </head>
+
+   
+
+    <body>
+        <canvas 
+        width=500 height=500 class="window-forcirclewall">
+        </canvas>
+        <script>
+        window.onload = function() {
+            var x = 5;
+            var y = 5;
+
+            function start() {
+                setTimer(wall,200);
+
+                if(y >= 500){
+                    stopTimer(wall);
+                }
+            }
+
+            function drawCircle(x,y,radius,color){
+                console.log('hello');
+                var circle = new Circle(radius);
+                circle.setColor(color);
+                circle.setPosition(x,y);
+                add(circle);
+            }
+            
+
+            function wall(){
+                console.log('hi');
+                drawCircle(x,y,20,Randomizer.nextColor());
+                x+=20;
+                if(x >= 500){
+                    y+=40;
+                    x = 5;
+                }
+            }
+
+           if (typeof start === 'function') {
+            start();
+           }
+            
+        };
+        </script>
+    </body>
+</html>

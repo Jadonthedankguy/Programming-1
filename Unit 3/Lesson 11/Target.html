@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
+        <title>Teleporting Ball</title>
+        <style>
+            canvas{
+                border: 3px solid black;
+                display: inline-block;
+                vertical-align: top;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Target</h1>
+        <canvas width="500px" height="500px"></canvas>
+        <script>
+            window.onload = function() {
+            function start(){
+                drawTarget(100,100);
+            }
+
+            function drawTarget(x,y){
+                drawCircle(x,y,30,"black");
+                drawCircle(x,y,20,"blue");
+                drawCircle(x,y,10,"red");
+            }
+
+            function drawCircle(x,y,radius,color){
+                var circle =  new Circle(radius);
+                circle.setPosition(x,y);
+                circle.setColor(color);
+                add(circle);
+            }
+
+           if (typeof start === 'function') {
+            start();
+           }
+        };
+        </script>
+    </body>
+</html>

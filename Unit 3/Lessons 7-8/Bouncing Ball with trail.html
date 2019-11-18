@@ -1,0 +1,146 @@
+<title>Bouncing Ball</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
+        <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
+        
+        
+        <style>
+        canvas {
+            border: 1px solid black;
+            display: inline-block;
+            vertical-align: top;
+        }
+        pre {
+            border: 1px solid black;
+            display: inline-block;
+            width: 400px;
+            height: 500px;
+            background-color: #F5F5F5;
+        }
+        </style>
+        
+        </head>
+        
+        <body>
+        <h1>Bouncing Ball</h1>
+        
+        
+        
+        <canvas
+        width="400"
+        height="500"
+        class="codehs-editor-canvas"></canvas>
+        
+        <script>
+        window.onload = function() {
+        var ball;
+        var dx = 4;
+        var dy = 4;
+        var trailball;
+        /* This program has a ball bounce around the screen. */
+        function start(){
+            var ballX = 100;
+            var ballY = 100;
+            trailball = new Circle(10);
+            ball = new Circle(20);
+            ball.setPosition(100, 100);
+            add(ball);
+            add(trailball);
+            
+            setTimer(draw, 20);
+            setTimer(trail,20);
+        }
+        function trail(){
+            checktrailWalls();
+            trailball.setPosition(ball.getX() - 25, ball.getY() - 10);
+            trailball.move(dx,dy);
+            if(trailball.getX() > 200){
+                trailball.setColor(Randomizer.nextColor());
+            }else if(trailball.getX() < 200){
+                trailball.setColor(Randomizer.nextColor());
+            }
+        }
+
+        function draw(){
+            checkWalls();
+            if(ball.getX() > 200){
+                ball.setColor(Randomizer.nextColor());
+            }else if(ball.getX() < 200){
+                ball.setColor(Randomizer.nextColor());
+            }
+            ball.move(dx, dy);
+        }
+
+        function checktrailWalls(){
+            var BOUNCE_COUNTER = 0;
+            var MAX_BOUNCES = 20;
+            // This if statment checks if 20 bounces is equal to the bounce counter, then it'll stop the timer, thus making it less laggy.
+            if(BOUNCE_COUNTER == MAX_BOUNCES){
+                stopTimer(trail);
+            }
+            // Bounce off right wall
+            if(trailball.getX() + trailball.getRadius() > getWidth()){
+                trailball.setPosition(ball.getX - 20 * -1, ball.getY - 10 * -1);
+                dx = -dx;
+               BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off left wall
+            if(trailball.getX() - trailball.getRadius() < 0){
+                dx = -dx;
+                BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off bottom wall
+            if(trailball.getY() + trailball.getRadius() > getHeight()){
+                dy = -dy;
+                BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off top wall
+            if(trailball.getY() - trailball.getRadius() < 0){
+                dy = -dy;
+                BOUNCE_COUNTER++;
+            }
+        }
+
+        function checkWalls(){
+            var BOUNCE_COUNTER = 0;
+            var MAX_BOUNCES = 20;
+            // Check if non-trail ball has bounced 20 times
+            if(BOUNCE_COUNTER == MAX_BOUNCES){
+                stopTimer(draw);
+            }
+            // Bounce off right wall
+            if(ball.getX() + ball.getRadius() > getWidth()){
+                dx = -dx;
+               BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off left wall
+            if(ball.getX() - ball.getRadius() < 0){
+                dx = -dx;
+                BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off bottom wall
+            if(ball.getY() + ball.getRadius() > getHeight()){
+                dy = -dy;
+                BOUNCE_COUNTER++;
+            }
+            
+            // Bounce off top wall
+            if(ball.getY() - ball.getRadius() < 0){
+                dy = -dy;
+                BOUNCE_COUNTER++;
+            }
+        }
+            if (typeof start === 'function') {
+                start();
+            }
+        };
+        </script>
+        
+        </body>
+        </html>
