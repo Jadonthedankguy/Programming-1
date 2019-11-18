@@ -18,17 +18,22 @@
         <canvas width="500px" height="500px"></canvas>
         <script>
             window.onload = function() {
-            var horizontal_line;
-            var vertical_line;
             function start() {
-                horizontal_line = new Line(0,0,500,0);
-                add(horizonal_line);
+            }
+
+            function drawTarget(x,y){
+            }
+
+            function drawCircle(x,y,radius,color){
+                var circle =  new Circle(radius);
+                circle.setPosition(x,y);
+                circle.setColor(color);
+                add(circle);
             }
 
            if (typeof start === 'function') {
             start();
            }
-            
         };
         </script>
     </body>
