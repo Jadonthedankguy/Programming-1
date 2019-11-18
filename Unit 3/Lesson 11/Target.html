@@ -4,7 +4,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
         <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
-        <title>Teleporting Ball</title>
+        <title>Target</title>
         <style>
             canvas{
                 border: 3px solid black;
@@ -18,23 +18,30 @@
         <canvas width="500px" height="500px"></canvas>
         <script>
             window.onload = function() {
+            var black_circle;
+            var blue_circle;
+            var red_circle;
             function start(){
-                drawTarget(100,100);
+                black_circle =  new Circle(30);
+                black_circle.setPosition(100,100);
+                black_circle.setColor("black");
+                add(black_circle);
+                blue_circle =  new Circle(20);
+                blue_circle.setPosition(100,100);
+                blue__circle.setColor("blue");
+                add(blue_circle);
+                red_circle =  new Circle(20);
+                red_circle.setPosition(100,100);
+                red_circle.setColor("red");
+                add(red_circle);
+                mouseMoveMethod(moveTarget);
             }
 
-            function drawTarget(x,y){
-                drawCircle(x,y,30,"black");
-                drawCircle(x,y,20,"blue");
-                drawCircle(x,y,10,"red");
+            function moveTarget(e){
+                black_circle.setPosition(e.getX(),e.getY());
+                blue_circle.setPosition(e.getX(),e.getY());
+                red_circle.setPosition(e.getX(),e.getY());
             }
-
-            function drawCircle(x,y,radius,color){
-                var circle =  new Circle(radius);
-                circle.setPosition(x,y);
-                circle.setColor(color);
-                add(circle);
-            }
-
            if (typeof start === 'function') {
             start();
            }
