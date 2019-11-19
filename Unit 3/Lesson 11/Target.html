@@ -22,6 +22,10 @@
                 var bluecircle;
                 var redcircle;
             function start(){
+                drawBlackCircle();
+                drawBlueCircle();
+                drawRedCircle();
+                
                 mouseMoveMethod(moveTarget);
             }
             function drawBlackCircle(){
@@ -30,9 +34,24 @@
                  blackcircle.setColor("black");
                  add(blackcircle);
             }
+            function drawBlueCircle(){
+                 bluecircle = new Circle(20);
+                 bluecircle.setPosition(100,100);
+                 bluecircle.setColor("blue");
+                 add(bluecircle);
+            }
+
+            function drawRedCircle(){
+                 redcircle = new Circle(10);
+                 redcircle.setPosition(100,100);
+                 redcircle.setColor("red");
+                 add(redcircle);
+            }
 
             function moveTarget(e){
-                
+                blackcircle.setPosition(e.getX(),e.getY());
+                bluecircle.setPosition(e.getX(),e.getY());
+                redcircle.setPosition(e.getX(),e.getY());
             }
            if (typeof start === 'function') {
             start();
