@@ -14,5 +14,22 @@
     <body>
         <h1>Snake</h1>
         <canvas id="window" width="500px" height="500px"></canvas>
+        <script>
+            window.onload = function() {
+            var dx;
+            var dy;
+            var square;
+                function start(){
+                    square = new Rectangle(20,20);
+                    square.setPosition(0,0);
+                    square.setColor("Green");
+                    add(square);
+                }
+            
+               if (typeof start === 'function') {
+                 start();
+                }
+        };
+        </script>
     </body>
 </html>
