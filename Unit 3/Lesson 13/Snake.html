@@ -31,6 +31,7 @@
                 }
             
                 function keyDown(e){
+                    checkWalls();
                     if(e.keyCode == Keyboard.letter('W')){
                         dy = -5;
                         square.move(0,dy);
