@@ -50,13 +50,13 @@
                 }
 
                 function checkWalls(){
-                    if(square.getX() > 499){
-                        square.setX(499);
-                    }else if(square.getX() < 1){
-                        square.setX(1);
+                    if(square.getX() > 450){
+                        square.setPosition(450,square.getY());
+                    }else if(square.getX() < 0.5){
+                        square.setPosition(0.5,square.getY());
                     }
-                    if(square.getY() > 499){
-                        square.setY(499);
+                    if(square.getY() > 450){
+                        square.setY(450);
                     }else if(square.getY() < 1){
                         square.setY(1);
                     }
