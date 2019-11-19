@@ -18,29 +18,21 @@
         <canvas width="500px" height="500px"></canvas>
         <script>
             window.onload = function() {
-            var black_circle;
-            var blue_circle;
-            var red_circle;
+                var blackcircle;
+                var bluecircle;
+                var redcircle;
             function start(){
-                red_circle =  new Circle(10);
-                red_circle.setPosition(100,100);
-                red_circle.setColor("red");
-                add(red_circle);
-                blue_circle =  new Circle(20);
-                blue_circle.setPosition(100,100);
-                blue__circle.setColor("blue");
-                add(blue_circle);
-                black_circle =  new Circle(30);
-                black_circle.setPosition(100,100);
-                black_circle.setColor("black");
-                add(black_circle);
                 mouseMoveMethod(moveTarget);
+            }
+            function drawBlackCircle(){
+                 blackcircle = new Circle(30);
+                 blackcircle.setPosition(100,100);
+                 blackcircle.setColor("black");
+                 add(blackcircle);
             }
 
             function moveTarget(e){
-                black_circle.setPosition(e.getX(),e.getY());
-                blue_circle.setPosition(e.getX(),e.getY());
-                red_circle.setPosition(e.getX(),e.getY());
+                
             }
            if (typeof start === 'function') {
             start();
