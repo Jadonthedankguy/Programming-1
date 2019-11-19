@@ -22,8 +22,12 @@
                 var ballOnLeash;
                 function start(){
                     ballOnLeash = new Circle(20);
-                    ballOnLeash.setPosition(100,100)
-                    line = new Line(100,100,50,100);
+                    
+                    line = new Line(100,100,
+                                    50,100);
+                    ballOnLeash.setPosition(100,100);
+                    add(line);
+                    add(ballOnLeash);
                     mouseMoveMethod(moveLeash);
                 }
            
