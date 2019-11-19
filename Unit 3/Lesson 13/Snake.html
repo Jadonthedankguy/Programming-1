@@ -24,11 +24,26 @@
             var square;
                 function start(){
                     square = new Rectangle(90, 90);
-                    square.setPosition(100, 100);
+                    square.setPosition(200,200);
                     square.setColor("green");
                     add(square);
+                    keyDownMethod(keyDown);
                 }
             
+                function keyDown(e){
+                    if(e.keyCode == Keyboard.letter('W')){
+                        square.move(0,-5);
+                    }
+                    if(e.keyCode == Keyboard.letter('S')){
+                        square.move(0,5);
+                    }
+                    if(e.keyCode == Keyboard.letter('A')){
+                        square.move(-5,0);
+                    }
+                    if(e.keyCode == Keyboard.letter('D')){
+                        square.move(5,0);
+                    }
+                }
                if (typeof start === 'function') {
                  start();
                 }
