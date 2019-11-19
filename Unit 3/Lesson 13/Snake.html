@@ -56,9 +56,9 @@
                         square.setPosition(0.5,square.getY());
                     }
                     if(square.getY() > 450){
-                        square.setY(450);
-                    }else if(square.getY() < 1){
-                        square.setY(1);
+                        square.setPosition(square.getX(),450);
+                    }else if(square.getY() < 0.5){
+                        square.setPosition(square.getX(),0.5);
                     }
                 }
                if (typeof start === 'function') {
