@@ -48,6 +48,19 @@
                         square.move(dx,0);
                     }
                 }
+
+                checkWalls(){
+                    if(square.getX() > 500){
+                        square.setX(500);
+                    }else if(square.getX() < 0){
+                        square.setX(0);
+                    }
+                    if(square.getY() > 500){
+                        square.setY(500);
+                    }else if(square.getY() < 0){
+                        square.setY(0);
+                    }
+                }
                if (typeof start === 'function') {
                  start();
                 }
