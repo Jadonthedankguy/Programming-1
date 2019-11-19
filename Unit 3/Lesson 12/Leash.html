@@ -33,6 +33,7 @@
            
                 function moveLeash(e){
                     line.setEndpoint(e.getX(), e.getY());
+                    ballOnLeash.setPosition(e.getX(), e.getY());
                 }
 
                 if (typeof start === 'function') {
