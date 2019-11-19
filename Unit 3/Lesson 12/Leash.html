@@ -18,8 +18,12 @@
         <canvas id="window" width="500px" height="500px"></canvas>
         <script>
             window.onload = function() {
-                
+                var line;
+                var ballOnLeash;
                 function start(){
+                    ballOnLeash = new Circle(20);
+                    ballOnLeash.setPosition(100,100)
+                    line = new Line(100,100,50,100);
                     mouseMoveMethod(moveLeash);
                 }
            
