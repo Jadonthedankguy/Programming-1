@@ -36,7 +36,9 @@
             var RADIUS = 30;
             var touchCircle = null;
         function start(){
-            drawCircles();
+            ball = new Circle(RADIUS);
+            ball.setPosition(100,100);
+            add(ball);
             mouseDownMethod(select);
             mouseDragMethod(drag);
             mouseUpMethod(drop);
