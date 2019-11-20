@@ -30,6 +30,8 @@
         
         <script>
         window.onload = function() {
+            var x;
+            var y;
             var NUM_CIRCLES = 3;
             var RADIUS = 30;
             var touchCircle = null;
@@ -43,8 +45,8 @@
         function drawCircles() {
             for (var i = 0; i < NUM_CIRCLES; i++) {
                 var circle = new Circle(RADIUS);
-                var x = Randomizer.nextInt(RADIUS, getWidth() - RADIUS);
-                var y = Randomizer.nextInt(RADIUS, getHeight() - RADIUS);
+                 x = Randomizer.nextInt(RADIUS, getWidth() - RADIUS);
+                 y = Randomizer.nextInt(RADIUS, getHeight() - RADIUS);
                 circle.setPosition(x, y);
                 circle.setColor(Randomizer.nextColor());
                 add(circle);
