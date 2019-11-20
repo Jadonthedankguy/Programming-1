@@ -61,7 +61,14 @@
                 }
 
         function drag(e){
-            
+            circle.move(e.getX(), e.getY());
+        }
+
+        function drop(e){
+            if(touchcircle !=null){
+                touchCircle == null;
+            }
+            circle.move(0,0);
         }
 
             if(typeof start === 'function') {
