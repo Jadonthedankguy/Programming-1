@@ -110,18 +110,25 @@ function checkWalls(){
     gameOver();
     if(snake.getX() > 450){
         snake.setPosition(450,snake.getY());
+        snake.move(0,0);
+        stopTimers();
         GAME_OVER = true;
     }  
     if(snake.getX() < 0.5){
         snake.setPosition(0.5,snake.getY());
+        stopTimers();
         GAME_OVER = true;
     }
     if(snake.getY() > 450){
         snake.setPosition(snake.getX(),450);
+        snake.move(0,0);
+        stopTimers();
         GAME_OVER = true;
     }
     if(snake.getY() < 0.5){
+        stopTimers();
         snake.setPosition(snake.getX(),0.5);
+        snake.move(0,0);
         GAME_OVER = true;
     }
 }
