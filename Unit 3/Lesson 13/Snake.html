@@ -38,11 +38,16 @@ var EAST = 5;
 var SOUTH = 1;
 var WEST = -2;
 var NORTH = -3;
+var food;
 function start(){
+    food = new Rectangle(20,20);
 	snake = new Rectangle(SNAKE_WIDTH, SNAKE_HEIGHT);
     snake.setColor(SNAKE_COLOR);
+    food.setColor(Color.red);
+    food.setPosition(300,300);
     snake.setPosition(100,100);
     add(snake);
+    add(food);
     keyDownMethod(keyDown);
 }
 function keyDown(e){
@@ -57,6 +62,16 @@ function keyDown(e){
     }
     if(e.keyCode == Keyboard.letter('D')){
         snake.move(EAST,0);
+    }
+}
+
+function checkWalls(){
+    if(snake.getX() > 450){
+        snake.setPosition(450);
+        snake.move(0,0);
+    }
+    if(snake.getX() < 0.5){
+        snake.setPosition(0.5)
     }
 }
 
