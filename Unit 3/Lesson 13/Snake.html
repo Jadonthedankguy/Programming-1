@@ -50,13 +50,13 @@ function keyDown(e){
         snake.move(0,NORTH);
     }
     if(e.keyCode == Keyboard.letter('S')){
-        snake.move(0,SOUTH);
+        snake.move(0,-SOUTH);
     }
     if(e.keyCode == Keyboard.letter('A')){
         snake.move(WEST,0);
     }
     if(e.keyCode == Keyboard.letter('D')){
-        snake.move(EAST,0);
+        snake.move(-EAST,0);
     }
 }
 
