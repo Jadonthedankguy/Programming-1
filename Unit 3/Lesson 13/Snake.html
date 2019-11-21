@@ -23,7 +23,7 @@ canvas {
 
 
 <canvas
-width="400"
+width="500"
 height="500"
 class="codehs-editor-canvas"></canvas>
 
@@ -63,6 +63,7 @@ function start(){
     
 }
 function keyDown(e){
+    checkWalls();
     if(e.keyCode == Keyboard.letter('W')){
         stopTimers();
         setTimer(Up,50);
@@ -106,6 +107,7 @@ function Right(){
 }
 
 function checkWalls(){
+    gameOver();
     if(snake.getX() > 450){
         snake.setPosition(450,snake.getY());
         GAME_OVER = true;
