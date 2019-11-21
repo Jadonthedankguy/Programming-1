@@ -23,8 +23,8 @@ canvas {
 
 
 <canvas
-width="500"
-height="500"
+width="500px"
+height="500px"
 class="codehs-editor-canvas"></canvas>
 
 <script>
@@ -108,26 +108,26 @@ function Right(){
 }
 
 function checkWalls(){
-    if(snake.getX() > 450){
+    if(snake.getX() > 500){
         stopTimers();
-        snake.setPosition(450,snake.getY());
+        snake.setPosition(500,snake.getY());
         snake.move(0,0);
         GAME_OVER = true;
     }  
-    if(snake.getX() < 0.5){
+    if(snake.getX() < 0){
         stopTimers();
-        snake.setPosition(0.5,snake.getY());
+        snake.setPosition(0,snake.getY());
         GAME_OVER = true;
     }
-    if(snake.getY() > 450){
+    if(snake.getY() > 500){
         stopTimers();
-        snake.setPosition(snake.getX(),450);
+        snake.setPosition(snake.getX(),500);
         snake.move(0,0);
         GAME_OVER = true;
     }
-    if(snake.getY() < 0.5){
+    if(snake.getY() < 0){
         stopTimers();
-        snake.setPosition(snake.getX(),0.5);
+        snake.setPosition(snake.getX(),0);
         snake.move(0,0);
         GAME_OVER = true;
     }
