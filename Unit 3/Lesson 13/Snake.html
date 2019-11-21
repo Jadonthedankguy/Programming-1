@@ -39,8 +39,28 @@ var SOUTH = 1;
 var WEST = 2;
 var NORTH = 3;
 function start(){
-	
+	snake = new Rectangle(SNAKE_WIDTH, SNAKE_HEIGHT);
+    snake.setColor(SNAKE_COLOR);
+    snake.setPosition(100,100);
+    add(snake);
+    keyDownMethod(keyDown);
 }
+function keyDown(e){
+    if(e.keyCode == Keyboard.letter('W')){
+        snake.move(0,NORTH);
+    }
+    if(e.keyCode == Keyboard.letter('S')){
+        snake.move(0,-SOUTH);
+    }
+    if(e.keyCode == Keyboard.letter('A')){
+        snake.move(WEST,0);
+    }
+    if(e.keyCode == Keyboard.letter('D')){
+        snake.move(EAST,0);
+    }
+}
+
+
     if (typeof start === 'function') {
         start();
     }
