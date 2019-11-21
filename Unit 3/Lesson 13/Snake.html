@@ -12,7 +12,7 @@ canvas {
     border: 3px solid black;
     display: inline-block;
     vertical-align: top;
-}
+} 
 </style>
 
 </head>
@@ -50,6 +50,8 @@ function start(){
     coords = new Text("0,0");
     food = new Rectangle(20,20);
 	snake = new Rectangle(SNAKE_WIDTH, SNAKE_HEIGHT);
+    coords.setPosition(200,200);
+    add(coords);
     gameOverText.setColor(Color.red);
     snake.setColor(SNAKE_COLOR);
     food.setColor(Color.red);
@@ -59,7 +61,7 @@ function start(){
     add(snake);
     add(food);
     keyDownMethod(keyDown);
-    mouseMoveEvent(coordinates);
+    mouseMoveMethod(coordinates);
 }
 function coordinates(e){
     coords.setText(e.getX()+","+e.getY());
@@ -117,9 +119,9 @@ function checkWalls(){
         snake.move(0,0);
         GAME_OVER = true;
     }  
-    if(snake.getX() < 0){
+    if(snake.getX() < 3){
         stopTimers();
-        snake.setPosition(0,snake.getY());
+        snake.setPosition(3,snake.getY());
         GAME_OVER = true;
     }
     if(snake.getY() > 500){
@@ -128,7 +130,7 @@ function checkWalls(){
         snake.move(0,0);
         GAME_OVER = true;
     }
-    if(snake.getY() < 0){
+    if(snake.getY() < 3){
         stopTimers();
         snake.setPosition(snake.getX(),0);
         snake.move(0,0);

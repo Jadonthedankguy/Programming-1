@@ -31,7 +31,7 @@
             var y;
             var NUM_CIRCLES = 3;
             var RADIUS = 30;
-            var touchCircle = null;
+            var touchCircle = false;
         function start(){
             ball = new Circle(RADIUS);
             ball.setPosition(100,100);
@@ -59,23 +59,21 @@
             console.log(e.getY());
             console.log(circle.getY());
             console.log(touchCircle);
-                    if(e.getX() == circle.getX() && e.getY() == circle.getY()){
                         touchCircle = true;
-                    }
-                    if(touchCircle !=null){
-                        circle.setPosition(e.getX(), e.getY());
-                    }
+                    
                 }
 
         function drag(e){
-            circle.move(e.getX(), e.getY());
+            if(touchCircle !=null){
+              circle.setPosition(e.getX(), e.getY());
+             }
         }
 
         function drop(e){
             if(touchcircle !=null){
                 touchCircle == null;
             }
-            circle.move(0,0);
+            circle.setPosition(e.getX(),e.getX());
         }
 
             if(typeof start === 'function') {
