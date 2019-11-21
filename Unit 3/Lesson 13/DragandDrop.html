@@ -53,25 +53,22 @@
         }
 
         function select(e){
-            console.log("hey");
-            console.log(e.getX());
-            console.log(circle.getX());
-            console.log(e.getY());
-            console.log(circle.getY());
-            console.log(touchCircle);
-                        touchCircle = true;
-                    
-                }
+            if(getElementAt(e.getX(),e.getY()) == circle){
+                    touchCircle = true;
+            }else{
+                    touchCircle = false;
+                }      
+             }
 
         function drag(e){
-            if(touchCircle !=null){
+            if(touchCircle == true ){
               circle.setPosition(e.getX(), e.getY());
              }
         }
 
         function drop(e){
-            if(touchcircle !=null){
-                touchCircle == null;
+            if(touchcircle == true){
+                touchCircle == false;
             }
             circle.setPosition(e.getX(),e.getX());
         }
