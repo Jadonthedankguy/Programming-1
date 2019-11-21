@@ -65,20 +65,20 @@ function start(){
 function keyDown(e){
     if(e.keyCode == Keyboard.letter('W')){
         stopTimers();
-        setTimer(Up,20);
+        setTimer(Up,50);
     }
     if(e.keyCode == Keyboard.letter('S')){
         stopTimers();
-        setTimer(Down,20);
+        setTimer(Down,50);
     }
     if(e.keyCode == Keyboard.letter('A')){
         stopTimers();
-        setTimer(Left,20);
+        setTimer(Left,50);
         
     }
     if(e.keyCode == Keyboard.letter('D')){
         stopTimers();
-        setTimer(Right,20);
+        setTimer(Right,50);
         
     }
 }
@@ -90,19 +90,19 @@ function stopTimers(){
     stopTimer(Right);
 }
 function Up(){
-    snake.move(0,10);
-}
-
-function Down(){
     snake.move(0,-10);
 }
 
+function Down(){
+    snake.move(0,10);
+}
+
 function Left(){
-    snake.move(10,0);
+    snake.move(-10,0);
 }
 
 function Right(){
-    snake.move(-10,0);
+    snake.move(10,0);
 }
 
 function checkWalls(){
