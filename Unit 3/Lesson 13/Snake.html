@@ -36,6 +36,7 @@ var snake;
 var GAME_OVER;
 var gameOverText;
 var MAX_TIME;
+var coords;
 // Constants to represent the directions
 GAME_OVER = false;
 var EAST = 0;
@@ -46,6 +47,7 @@ var food;
 function start(){
     MAX_TIME = 60;
     gameOverText = new Text("GAME OVER!!");
+    coords = new Text("0,0");
     food = new Rectangle(20,20);
 	snake = new Rectangle(SNAKE_WIDTH, SNAKE_HEIGHT);
     gameOverText.setColor(Color.red);
@@ -57,11 +59,12 @@ function start(){
     add(snake);
     add(food);
     keyDownMethod(keyDown);
-    
-    
-    
-    
+    mouseMoveEvent(coordinates);
 }
+function coordinates(e){
+    coords.setText(e.getX()+","+e.getY());
+}
+
 function keyDown(e){
     gameOver();
     checkWalls();
