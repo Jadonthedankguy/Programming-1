@@ -36,7 +36,7 @@
             ball = new Circle(RADIUS);
             ball.setPosition(100,100);
             add(ball);
-            mouseDownMethod(select);
+            mouseDownMethod(down);
             mouseDragMethod(drag);
             mouseUpMethod(drop);
             // Add your drag and drop code
@@ -52,8 +52,8 @@
             }
         }
 
-        function select(e){
-            if(getElementAt(e.getX(),e.getY()) == circle){
+        function down(e){
+            if(getElementAt(e.getX(),e.getY()) == ball){
                     touchCircle = true;
             }else{
                     touchCircle = false;
@@ -62,7 +62,7 @@
 
         function drag(e){
             if(touchCircle == true ){
-              circle.setPosition(e.getX(), e.getY());
+              ball.setPosition(e.getX(), e.getY());
              }
         }
 
@@ -70,7 +70,7 @@
             if(touchcircle == true){
                 touchCircle == false;
             }
-            circle.setPosition(e.getX(),e.getX());
+            ball.setPosition(e.getX(),e.getX());
         }
 
             if(typeof start === 'function') {
