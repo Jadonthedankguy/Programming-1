@@ -38,10 +38,10 @@ var gameOverText;
 var MAX_TIME;
 // Constants to represent the directions
 GAME_OVER = false;
-var EAST = 5;
+var EAST = 0;
 var SOUTH = 1;
-var WEST = -2;
-var NORTH = -3;
+var WEST = 2;
+var NORTH = 3;
 var food;
 function start(){
     MAX_TIME = 60;
@@ -57,20 +57,52 @@ function start(){
     add(snake);
     add(food);
     keyDownMethod(keyDown);
+    
+    
+    
+    
 }
 function keyDown(e){
     if(e.keyCode == Keyboard.letter('W')){
-        snake.move(0,NORTH);
+        stopTimers();
+        setTimer(Up,20);
     }
     if(e.keyCode == Keyboard.letter('S')){
-        snake.move(0,SOUTH);
+        stopTimers();
+        setTimer(Down,20);
     }
     if(e.keyCode == Keyboard.letter('A')){
-        snake.move(WEST,0);
+        stopTimers();
+        setTimer(Left,20);
+        
     }
     if(e.keyCode == Keyboard.letter('D')){
-        snake.move(EAST,0);
+        stopTimers();
+        setTimer(Right,20);
+        
     }
+}
+
+function stopTimers(){
+    stopTimer(Up);
+    stopTimer(Down);
+    stopTimer(Left);
+    stopTimer(Right);
+}
+function Up(){
+    snake.move(0,10);
+}
+
+function Down(){
+    snake.move(0,-10);
+}
+
+function Left(){
+    snake.move(10,0);
+}
+
+function Right(){
+    snake.move(-10,0);
 }
 
 function checkWalls(){
