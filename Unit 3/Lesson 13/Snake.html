@@ -34,6 +34,7 @@ var SNAKE_HEIGHT = 40;
 var SNAKE_COLOR = Color.green;
 var snake;
 var GAME_OVER;
+var gameOverText;
 // Constants to represent the directions
 GAME_OVER = false;
 var EAST = 5;
@@ -42,10 +43,13 @@ var WEST = -2;
 var NORTH = -3;
 var food;
 function start(){
+    gameOverText = new Text("GAME OVER!!");
     food = new Rectangle(20,20);
 	snake = new Rectangle(SNAKE_WIDTH, SNAKE_HEIGHT);
+    gameOverText.setColor(Color.red);
     snake.setColor(SNAKE_COLOR);
     food.setColor(Color.red);
+    gameOverText.setPosition(200,200);
     food.setPosition(300,300);
     snake.setPosition(100,100);
     add(snake);
@@ -87,7 +91,10 @@ function checkWalls(){
 }
 
 function gameOver(){
-    
+    if(GAME_OVER == true){
+        clear();
+        add(gameOverText);
+    }
 }
 
 
