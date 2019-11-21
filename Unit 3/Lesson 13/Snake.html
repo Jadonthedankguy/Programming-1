@@ -33,7 +33,9 @@ window.onload = function() {
 var SNAKE_HEIGHT = 40;
 var SNAKE_COLOR = Color.green;
 var snake;
+var GAME_OVER;
 // Constants to represent the directions
+GAME_OVER = false;
 var EAST = 5;
 var SOUTH = 1;
 var WEST = -2;
@@ -67,11 +69,19 @@ function keyDown(e){
 
 function checkWalls(){
     if(snake.getX() > 450){
-        snake.setPosition(450);
-        snake.move(0,0);
-    }
+        snake.setPosition(450,snake.getY());
+        GAME_OVER = true;
+    }  
     if(snake.getX() < 0.5){
-        snake.setPosition(0.5)
+        snake.setPosition(0.5,snake.getY());
+        GAME_OVER = true;
+    }
+    if(snake.getY() > 450){
+        snake.setPosition(snake.getX(),450);
+        GAME_OVER = true;
+    }
+    if(snake.getY() < 0.5){
+        snake.setPosition(snake.getX(),0.5);
     }
 }
 
