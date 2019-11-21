@@ -35,6 +35,7 @@ var SNAKE_COLOR = Color.green;
 var snake;
 var GAME_OVER;
 var gameOverText;
+var MAX_TIME;
 // Constants to represent the directions
 GAME_OVER = false;
 var EAST = 5;
@@ -43,6 +44,7 @@ var WEST = -2;
 var NORTH = -3;
 var food;
 function start(){
+    MAX_TIME = 60;
     gameOverText = new Text("GAME OVER!!");
     food = new Rectangle(20,20);
 	snake = new Rectangle(SNAKE_WIDTH, SNAKE_HEIGHT);
