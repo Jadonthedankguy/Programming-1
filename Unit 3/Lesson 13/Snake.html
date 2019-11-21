@@ -82,7 +82,12 @@ function checkWalls(){
     }
     if(snake.getY() < 0.5){
         snake.setPosition(snake.getX(),0.5);
+        GAME_OVER = true;
     }
+}
+
+function gameOver(){
+    
 }
 
 
