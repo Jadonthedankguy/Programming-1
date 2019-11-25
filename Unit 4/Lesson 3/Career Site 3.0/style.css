@@ -10,14 +10,17 @@ p{
     width: 100%;
 }
 .header{
+    color:white;
     border-style: solid;
     background-image:url(https://farm8.staticflickr.com/7855/33607285688_efb4432fce_b.jpg);
 }
 .content{
+    color:white;
     background-image:url(https://farm8.staticflickr.com/7855/33607285688_efb4432fce_b.jpg);
     height: 80%;
     width: 70%;
 }
 .footer{
+    color:white;
     background-image:url(https://farm8.staticflickr.com/7855/33607285688_efb4432fce_b.jpg);
 }
