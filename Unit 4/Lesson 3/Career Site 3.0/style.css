@@ -10,5 +10,11 @@ p{
     width: 100%;
 }
 .header{
-    
+    border-style: solid;
+    background-color: red;
+}
+.content{
+    background-color: red;
+    height: 80%;
+    width: 70%;
 }
