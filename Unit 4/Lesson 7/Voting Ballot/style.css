@@ -1,0 +1,12 @@
+ul{
+    list-style:square;
+}
+li:hover::after{
+    background-color:PaleGoldenRod;
+    content:"  Pick me! Pick me!";
+}
+
+li:active::after{
+    background-color: #46c70b;
+    content: " You have made a good decision";
+}
