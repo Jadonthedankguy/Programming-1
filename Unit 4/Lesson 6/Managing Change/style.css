@@ -1,7 +1,6 @@
 ul{
     list-style:none; /* removes the bullet points*/
     display:inline-flex; /* allows the links to be next to each other*/
-    background-color:#58aa88;
 }
 
 body{
@@ -14,19 +13,15 @@ body{
 a{
     border: 7px groove #baaf5d; /* sets the border to make it look like a button */
     text-decoration:none; /* removes the underline from the link */
-    color:#aa6458;
-    background-color:#58aa88;
+    color:white;
+    background-color:#baaf5d;
 }
 
 li{
     margin:10px; /* adds space between links */
-    background-color:#58aa88;
     font-size: 24px;
-    color:#aa6458;
 }
 
 .featured{
-    color:#aa6458;;
     font-size:64px;
-    background-color:#58aa88;;
 }
