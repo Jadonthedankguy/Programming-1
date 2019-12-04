@@ -7,6 +7,10 @@ ul > a{
 h2 > a{
     color:white;
 }
+#featured > h2{
+    color:#30e694;
+    font-style:italic;
+}
 
 
 
