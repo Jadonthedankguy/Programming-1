@@ -6,26 +6,27 @@ li:hover::after{
     content:"  Pick me! Pick me!";
 }
 
-li:active{
+#Seong:active::after{
     background-color:#46c70b;
-}
-
-#Seong::after{
     content:"Epic Gamer Choice!";
 }
 
-#Maria::after{
+#Maria:active::after{
+    background-color:#46c70b;
     content:"Ok Boomer";
 }
 
-#Dorji::after{
+#Dorji:active::after{
+    background-color:#46c70b;
     content:"So basically, Obamium";
 }
 
-#Andille::after{
+#Andille:active::after{
+    background-color:#46c70b;
     content:"Lit man, he once did meme review with elon musk in another dimension."
 }
 
-#Shakti::after{
+#Shakti:active::after{
+    background-color:#46c70b;
     content:"Suprisingly, Shakti is russian, not asian.";
 }
