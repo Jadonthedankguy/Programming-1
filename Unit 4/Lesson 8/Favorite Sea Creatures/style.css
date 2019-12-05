@@ -1,15 +1,11 @@
 /* Hide all but two of your favorite animals' captions */
 
 #octopus-cap{
-    display: none;
-}
-
-#whale-cap{
-    display: none;
+    visibility: hidden;
 }
 
 #shark-cap{
-    display: none;
+   visibility: hidden;
 }
 
 /* Other styles */
