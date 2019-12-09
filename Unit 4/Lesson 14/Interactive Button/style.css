@@ -13,12 +13,12 @@ button {
     font-size: 15px;
     outline: none;
 }
-#clickable{
+.clickable{
     width:200px;
     height:150px;
     transition: width, height 2s;
 }
-#clickable:active{
+.clickable:active{
     width:250px;
     height:200px;
 }
