@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
         <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
         <title>Coinflip with Head and Tails counter</title>
     </head>
@@ -16,6 +17,7 @@
  * times an put the results into an array.
  * We also want to print that array.
  */
+ window.onload = function(){
 function start(){
 	var flips = flipCoins();
 	printArray(flips);
@@ -54,6 +56,11 @@ function countHeadsAndTails(flips){
     console.log("Total Amount of Heads: " + headcounter);
     console.log("Total Amount of Tails" + tailscounter);
 }
+
+if (typeof start === 'function') {
+        start();
+    }
+ }
         </script>
     </body>
 </html>
