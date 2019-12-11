@@ -4,25 +4,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
         <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
-        <title>Coinflip with Head and Tails counter</title>
+        <title>Circle Wall Animation</title>
     </head>
+
+   
 
     <body>
         <script>
+            window.onload = function() {
             var NUM_FLIPS = 100;
             var headcounter = 0;
             var tailscounter = 0;
+            
 
-/* Write a program to flip a coin NUM_FLIPS
- * times an put the results into an array.
- * We also want to print that array.
- */
- window.onload = function(){
-function start(){
-	var flips = flipCoins();
-	printArray(flips);
-    countHeadsAndTails(flips);
-}
+            function start(){
+                var flips = flipCoins();
+                printArray(flips);
+                countHeadsAndTails(flips);
+            }
 
 // This function should flip a coin NUM_FLIPS
 // times, and add the result to an array. We
@@ -57,10 +56,11 @@ function countHeadsAndTails(flips){
     console.log("Total Amount of Tails" + tailscounter);
 }
 
-if (typeof start === 'function') {
-        start();
-    }
- }
+           if (typeof start === 'function') {
+            start();
+           }
+            
+        };
         </script>
     </body>
 </html>
