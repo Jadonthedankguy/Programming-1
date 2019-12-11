@@ -4,17 +4,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
         <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
-        <title>Circle Wall Animation</title>
+        <title>Coinflip with Tails and Heads counter</title>
     </head>
 
    
 
     <body>
         <script>
-            window.onload = function() {
+window.onload = function() {
+            var rand;
             var NUM_FLIPS = 100;
             var headcounter = 0;
             var tailscounter = 0;
+            
             
 
             function start(){
@@ -28,8 +30,10 @@
 // return the result to the caller.
 function flipCoins(){
 	var flips = [];
-	for(var i = 0; i < NUM_FLIPS; i++){
-		if(Randomizer.nextBoolean()){
+	for(var i = 0; i < NUM_FLIPS; i++){                
+        rand = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+        console.log(rand);
+		if(rand == 1){
 			flips.push("Heads");
 		}else{
 			flips.push("Tails");
@@ -46,14 +50,14 @@ function printArray(arr){
 
 function countHeadsAndTails(flips){
     for(var i = 0; i < flips.length; i++){
-        if(i == "Heads"){
+        if(rand == 1){
             headcounter++;
         }else{
             tailscounter++;
         }
     }
     console.log("Total Amount of Heads: " + headcounter);
-    console.log("Total Amount of Tails" + tailscounter);
+    console.log("Total Amount of Tails: " + tailscounter);
 }
 
            if (typeof start === 'function') {
