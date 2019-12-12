@@ -16,6 +16,7 @@ window.onload = function() {
             var NUM_FLIPS = 100;
             var headcounter = 0;
             var tailscounter = 0;
+            var headsstreak = 0;
             
             function start(){
                 flipCoins();
@@ -58,6 +59,16 @@ function countHeadsAndTails(){
     }
     document.write("Total Amount of Heads: " + headcounter + "<br>");
     document.write("Total Amount of Tails: " + tailscounter);   
+}
+
+function headsStreak(){
+    for(i = 0; i < flips.length; i++){
+        if(flips[i] == "Heads"){
+            headsstreak++;
+        }else if(flips[i] == "Tails"){
+            
+        }
+    }
 }
 
    
