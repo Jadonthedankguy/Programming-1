@@ -16,7 +16,6 @@ window.onload = function() {
             var NUM_FLIPS = 100;
             var headcounter = 0;
             var tailscounter = 0;
-            var i;
             
             function start(){
                 flipCoins();
@@ -31,7 +30,6 @@ function flipCoins(){
     flips = [];
 	for(var i = 0; i < NUM_FLIPS; i++){                
         rand = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-        console.log(rand);
 		if(rand == 1){
 			flips.push("Heads");
 		    }else{
@@ -58,9 +56,11 @@ function countHeadsAndTails(){
             tailscounter++;
         }
     }
-    console.log("Total Amount of Heads: " + headcounter);
-    console.log("Total Amount of Tails: " + tailscounter);   
+    document.write("Total Amount of Heads: " + headcounter + "<br>");
+    document.write("Total Amount of Tails: " + tailscounter);   
 }
+
+   
     
 
            if (typeof start === 'function') {
