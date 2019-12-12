@@ -19,6 +19,8 @@ window.onload = function() {
             var tailscounter = 0;
             var headsstreak = 0;
             var highscore = 0;
+            var headshours = [];
+            var sum = 0;
             
             function start(){
                 headsStreak();
@@ -64,17 +66,17 @@ function countHeadsAndTails(){
 }
 
 function headsStreak(){
-    for(var i = 0; i < flips.length; i++){
+    for(i = 0; i < flips.length; i++){
         if(flips[i] == "Heads"){
-            headsstreak++;
+            headshours.push(1);
         }else if(flips[i] == "Tails"){
             
-        }else if(headsstreak > highscore){
-            headsstreak = highscore;
         }
     }
         
-    document.write("Longest Heads in a row: " + highscore + "<br>");
+            
+        
+    
 }
 
    
