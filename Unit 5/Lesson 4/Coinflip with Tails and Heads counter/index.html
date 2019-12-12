@@ -17,6 +17,8 @@ window.onload = function() {
             var headcounter = 0;
             var tailscounter = 0;
             var headsstreak = 0;
+            var tailsstreak = 0;
+            var highscore = 0;
             
             function start(){
                 flipCoins();
@@ -58,7 +60,7 @@ function countHeadsAndTails(){
         }
     }
     document.write("Total Amount of Heads: " + headcounter + "<br>");
-    document.write("Total Amount of Tails: " + tailscounter);   
+    document.write("Total Amount of Tails: " + tailscounter + "<br>");   
 }
 
 function headsStreak(){
@@ -66,9 +68,12 @@ function headsStreak(){
         if(flips[i] == "Heads"){
             headsstreak++;
         }else if(flips[i] == "Tails"){
-            
+            headsstreak = highscore;
+        }else if(headsstreak > highscore){
+            headsstreak = highscore;
         }
     }
+    document.write("Longest Heads in a row: " + highscore);
 }
 
    
