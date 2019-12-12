@@ -12,15 +12,16 @@
     <body>
         <script>
 window.onload = function() {
+            var flips = [];
             var rand;
             var NUM_FLIPS = 100;
             var headcounter = 0;
             var tailscounter = 0;
             var headsstreak = 0;
-            var tailsstreak = 0;
             var highscore = 0;
             
             function start(){
+                headsStreak();
                 flipCoins();
                 countHeadsAndTails();
                 printArray(flips);
@@ -30,7 +31,6 @@ window.onload = function() {
 // times, and add the result to an array. We
 // return the result to the caller.
 function flipCoins(){
-    flips = [];
 	for(var i = 0; i < NUM_FLIPS; i++){                
         rand = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
 		if(rand == 1){
@@ -64,16 +64,17 @@ function countHeadsAndTails(){
 }
 
 function headsStreak(){
-    for(i = 0; i < flips.length; i++){
+    for(var i = 0; i < flips.length; i++){
         if(flips[i] == "Heads"){
             headsstreak++;
         }else if(flips[i] == "Tails"){
-            headsstreak = highscore;
+            
         }else if(headsstreak > highscore){
             headsstreak = highscore;
         }
     }
-    document.write("Longest Heads in a row: " + highscore);
+        
+    document.write("Longest Heads in a row: " + highscore + "<br>");
 }
 
    
