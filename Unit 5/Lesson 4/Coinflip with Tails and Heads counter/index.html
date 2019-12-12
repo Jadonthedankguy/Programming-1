@@ -16,31 +16,34 @@ window.onload = function() {
             var NUM_FLIPS = 100;
             var headcounter = 0;
             var tailscounter = 0;
+            var i;
             
             
 
             function start(){
                 var flips = flipCoins();
                 printArray(flips);
-                countHeadsAndTails(flips);
             }
 
 // This function should flip a coin NUM_FLIPS
 // times, and add the result to an array. We
 // return the result to the caller.
 function flipCoins(){
-	var flips = [];
+    flips = [];
 	for(var i = 0; i < NUM_FLIPS; i++){                
         rand = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
         console.log(rand);
 		if(rand == 1){
 			flips.push("Heads");
-		}else{
+		    }else{
 			flips.push("Tails");
-		}
+		    }
+        }
+        
+        return flips;
 	}
-	return flips;
-}
+	
+
 
 function printArray(arr){
 	for(var i = 0; i < arr.length; i++){
@@ -48,17 +51,18 @@ function printArray(arr){
 	}
 }
 
-function countHeadsAndTails(flips){
+function countHeadsAndTails(){
     for(var i = 0; i < flips.length; i++){
-        if(rand == 1){
+        if(flips[i] == "Heads"){
             headcounter++;
-        }else{
+        }else if(flips[i] == "Tails"){
             tailscounter++;
         }
     }
     console.log("Total Amount of Heads: " + headcounter);
-    console.log("Total Amount of Tails: " + tailscounter);
+    console.log("Total Amount of Tails: " + tailscounter);   
 }
+    
 
            if (typeof start === 'function') {
             start();
