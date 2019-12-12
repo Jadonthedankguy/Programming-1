@@ -19,8 +19,6 @@ window.onload = function() {
             var tailscounter = 0;
             var headsstreak = 0;
             var highscore = 0;
-            var headshours = [];
-            var sum = 0;
             
             function start(){
                 headsStreak();
@@ -67,16 +65,16 @@ function countHeadsAndTails(){
 
 function headsStreak(){
     for(i = 0; i < flips.length; i++){
+        console.log(headsstreak);
+        console.log(highscore);
         if(flips[i] == "Heads"){
-            headshours.push(1);
+            headsstreak++;
         }else if(flips[i] == "Tails"){
-            
+            highscore = headstreak;
         }
     }
         
-            
-        
-    
+    document.write("Head Streak Amount: " + highscore + "<br>");
 }
 
    
