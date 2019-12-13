@@ -63,18 +63,18 @@ function countHeadsAndTails(){
     document.write("Total Amount of Tails: " + tailscounter + "<br>");   
 }
 
-function headsStreak(){
-    for(i = 0; i < flips.length; i++){
-        console.log(headsstreak);
-        console.log(highscore);
+function headsStreak(arr){
+    for(var i = 0; i < arr.length; i++){
         if(flips[i] == "Heads"){
             headsstreak++;
         }else if(flips[i] == "Tails"){
-            highscore = headstreak;
+            highscore = headsstreak;
+            headsstreak = 0;
         }
     }
-        
-    document.write("Head Streak Amount: " + highscore + "<br>");
+    document.write("Longest Streak of Heads: " + highscore + "<br>");
+}
+    
 }
 
    
