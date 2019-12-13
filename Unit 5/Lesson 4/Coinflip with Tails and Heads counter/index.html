@@ -21,10 +21,10 @@ window.onload = function() {
             var highscore = 0;
             
             function start(){
-                headsStreak();
-                flipCoins();
+                flips = flipCoins();
+                headsStreak(flips);
                 countHeadsAndTails();
-                printArray(flips);
+                //printArray(flips);
             }
 
 // This function should flip a coin NUM_FLIPS
@@ -65,16 +65,18 @@ function countHeadsAndTails(){
 
 function headsStreak(arr){
     for(var i = 0; i < arr.length; i++){
-        if(flips[i] == "Heads"){
+        console.log("Heads Streak Amount: " + headsstreak);
+        console.log("High Score Amount: " + highscore);
+        if(arr[i] == "Heads"){
             headsstreak++;
-        }else if(flips[i] == "Tails"){
+        }
+        if(highscore < headsstreak){
             highscore = headsstreak;
             headsstreak = 0;
         }
     }
+   
     document.write("Longest Streak of Heads: " + highscore + "<br>");
-}
-    
 }
 
    
