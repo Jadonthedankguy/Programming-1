@@ -8,9 +8,15 @@
     <body>
         <script>
             window.onload = function(){
-
+                var line = ["Sam", "Lisa", "Laurie", "Bob", "Ryan"];
                 function start(){
-                    
+                    movietheaterline();
+                }
+
+                function movietheaterline(){
+                    document.write(line + "<br>");
+                    elem = line.remove(0);
+                    document.write(elem + "<br>");
                 }
 
                 if(typeof start == "function"){
