@@ -6,7 +6,8 @@
 
     <body>
         <script>
-           function start(){
+        window.onload = function(){
+            function start(){
         var sidekicks = {};
     
     // Enter some sidekicks into the database
@@ -21,7 +22,13 @@
         var Mermaidsidekick = sidekicks["Batman"];
     // Add your sidekick to the database
         sidekicks["Madly Jado"] = "Bloblario";
-}
+        }
+
+        if(typeof start === "function"){
+            start();
+        }
+     }
+           
         </script>
     </body>
 </html>
