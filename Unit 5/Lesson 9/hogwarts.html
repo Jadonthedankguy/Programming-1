@@ -18,12 +18,11 @@ function printStudentsInHouse(studentHouse, house){
     //console.log(studentHouse);
     //console.log(house);
     for(var student in studentHouse){
-        var thehouse = studentHouse[house];
-        console.log(thehouse);
-        console.log(student);
+        var thehouse = studentHouse[student];
+        
         console.log(thehouse == house);
         if (thehouse == house){
-            document.write(thehouse + "<br>");
+            document.write(student + "<br>");
         }
     }
 }
