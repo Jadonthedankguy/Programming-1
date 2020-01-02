@@ -20,7 +20,8 @@ function printStudentsInHouse(studentHouse, house){
     for(var student in studentHouse){
         var thehouse = studentHouse[house];
         console.log(thehouse);
-        console.log(house);
+        console.log(student);
+        console.log(thehouse == house);
         if (thehouse == house){
             document.write(thehouse + "<br>");
         }
