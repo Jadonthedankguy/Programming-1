@@ -15,9 +15,15 @@
 // Iterates through the Object studentHouse and prints
 // out the name of every student in the given house
 function printStudentsInHouse(studentHouse, house){
-    for(house in studentHouse){
-        student = studentHouse[house];
-        document.write(house + " -> " + student);
+    //console.log(studentHouse);
+    //console.log(house);
+    for(var student in studentHouse){
+        var thehouse = studentHouse[house];
+        console.log(thehouse);
+        console.log(house);
+        if (thehouse == house){
+            document.write(thehouse + "<br>");
+        }
     }
 }
 
