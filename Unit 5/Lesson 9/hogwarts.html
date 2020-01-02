@@ -9,15 +9,16 @@
         window.onload = function(){
             function start(){
     var studentHouse = buildStudentHouseObject();
-    printStudentsInHouse(studentHouse, "Gryffindor");
+    printStudentsInHouse(studentHouse, );
 }
 
 // Iterates through the Object studentHouse and prints
 // out the name of every student in the given house
 function printStudentsInHouse(studentHouse, house){
-    for(var house in studentHouse){
-        var Student = studentHouse[house];
-        console.log(house + "->" + student);
+    for(house in studentHouse){
+        student = studentHouse[house];
+        document.write(house + " -> " + student);
+    }
 }
 
 function buildStudentHouseObject(){
@@ -40,8 +41,7 @@ function buildStudentHouseObject(){
     if(typeof start === "function"){
         start();
     }
-}
-        }      
+}     
         </script>
     </body>
 </html>
