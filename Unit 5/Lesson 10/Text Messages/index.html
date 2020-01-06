@@ -18,16 +18,16 @@
             var sendPerson;
             var message = document.getElementById("Message");
             var textMessages = {
-            "John": "John: Hey Jadon wanna play with the boiiis",
-            "Mommy": "Mommy: Hey Jadon can you order us some food for Dinner?",
-            "Obama": "Obama: Uh hello Jadon, uh I would like to congradulate you uh, for being an absolute uh, gamer!",
+            "John: Hey Jadon wanna play with the boiiis": "John",
+            "Mommy: Hey Jadon can you order us some food for Dinner?": "Mommy",
+            "Obama: Uh hello Jadon, uh I would like to congradulate you uh, for being an absolute uh, gamer!": "Obama",
             }
             function sendMessage(textMessages, friendName, message){
                 textMessages[friendName] = "Jadon: " + message;
             }
             function getMessages(textMessages, friendName){
                 for(var friend in textMessages){
-                    var messages = 
+                    var messages = textMessages[friend];
                     console.log(messages);
                 }
             }
