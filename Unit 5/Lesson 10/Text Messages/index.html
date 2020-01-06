@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Messages</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <h1>Contacts</h1>
+        <p>John<br>Mommy<br>Obama</p>
+        <br>
+        <h1 id="Message" contenteditable="true">Type Message here</h1>
+        <br>
+        <button id="send_button" onclick="promptMe()">Send</button>
+        <br>
+        <button id="get_message_button" onclick="promptMe2()">Get Messages from Person</button>
+        <script>
+            var sendPerson;
+            var message = document.getElementById("Message");
+            var textMessages = {
+            "John": "John: Hey Jadon wanna play with the boiiis",
+            "Mommy": "Mommy: Hey Jadon can you order us some food for Dinner?",
+            "Obama": "Obama: Uh hello Jadon, uh I would like to congradulate you uh, for being an absolute uh, gamer!"
+            }
+            function sendMessage(textMessages, friendName, message){
+                textMessages[friendName] = "Jadon: " + message;
+            }
+            function getMessages(textMessages, friendName){
+                for(var friend in textMessages){
+                    var messages = textMessages[friend];
+
+                    if(messages == friend){
+                        document.write(friend + "<br>");
+                    }
+                }
+            }
+            function promptMe(){
+                sendPerson = prompt("Who do you want to send this to?");
+                sendMessage(textMessages, sendPerson, message);
+            }
+            function promptMe2(){
+                getPerson = prompt("Who do you want to get all Messages from?");
+                getMessages(textMessages, getPerson);
+            }
+        </script> }
+    </body>
+</html>
