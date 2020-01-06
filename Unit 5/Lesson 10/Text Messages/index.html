@@ -16,19 +16,22 @@
         <button id="get_message_button" onclick="promptMe2()">Get Messages from Person</button>
         <script>
             var sendPerson;
-            var message = document.getElementById("Message");
+            var message = document.getElementById("Message").value;
             var textMessages = {
-            "John: Hey Jadon wanna play with the boiiis": "John",
-            "Mommy: Hey Jadon can you order us some food for Dinner?": "Mommy",
-            "Obama: Uh hello Jadon, uh I would like to congradulate you uh, for being an absolute uh, gamer!": "Obama",
+            "John": "John: Hey Jadon wanna play with the boiiis",
+            "Mommy": "Mommy: Hey Jadon can you order us some food for Dinner?",
+            "Obama": "Obama: Uh hello Jadon, uh I would like to congradulate you uh, for being an absolute uh, gamer!",
             }
             function sendMessage(textMessages, friendName, message){
                 textMessages[friendName] = "Jadon: " + message;
             }
             function getMessages(textMessages, friendName){
+                
                 for(var friend in textMessages){
-                    var messages = textMessages[friend];
-                    console.log(messages);
+                    messages = textMessages[friend];
+                    if(friend == friendName){
+                        console.log(messages);
+                    }
                 }
             }
             function promptMe(){
