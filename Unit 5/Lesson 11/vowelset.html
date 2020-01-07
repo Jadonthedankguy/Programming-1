@@ -2,12 +2,13 @@
 <html>
     <head>
         <title>Vowel Checker</title>
+        <script type="text/javascript" src="https://static.codehs.com/gulp/d54aaf6a8d27bce7b597dd025889481c28ebf59b/chs-js-lib/chs.js"></script>
     </head>
 
     <body>
         <script>
             checkVowel();
-            set = new Set();
+            var set = new Set();
             set.add("a");
             set.add("e")
             set.add("i");
@@ -18,9 +19,10 @@
                     prompVowel = prompt("Type in a letter here(No Uppercase.)");
                     if(set.contains(prompVowel) == true){
                         console.log("This is a vowel");
-                    }else if(set.contains(prompVowel ) == false){
+                    }else if(set.contains(prompVowel) == false){
                         console.log("This is not a Vowel");
-                    }else if(prompVowel == ""){
+                    } 
+                    if(prompVowel == ""){
                         break;
                     }
                 }
