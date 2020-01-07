@@ -12,8 +12,18 @@
             set.add("i");
             set.add("o");
             set.add("u");
-            function checkVowel()
-            
+            function checkVowel(){
+                while(true){
+                    prompVowel = prompt("Type in a letter here(No Uppercase.)");
+                    if(set.contains(prompVowel) == true){
+                        console.log("This is a vowel");
+                    }else if(set.contains(prompVowel ) == false){
+                        console.log("This is not a Vowel");
+                    }else if(prompVowel == ""){
+                        break;
+                    }
+                }
+            }
         </script>
     </body>
 </html>
