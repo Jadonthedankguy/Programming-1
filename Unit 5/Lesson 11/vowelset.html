@@ -46,7 +46,7 @@ window.onload = function() {
     set.add("u");
     function checkVowel(){
         while(true){
-            Vowelprompt = prompt("Put in any letter here(no capitals.)");
+            Vowelprompt = prompt("Put in any letter here(no capitals, and also type in nothing to stop.)");
             if(set.contains(Vowelprompt)){
                 console.log("Letter: " + Vowelprompt + "Yes it is a vowel");
             }else if(set.contains(Vowelprompt) == false){
