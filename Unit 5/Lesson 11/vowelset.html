@@ -46,9 +46,7 @@ window.onload = function() {
     set.add("o");
     set.add("u");
 }
-    if (typeof start === 'function') {
-        start();
-    }
+    
     function checkVowel(){
         while(true){
             Vowelprompt = prompt("Put in any letter here(no capitals, and also type in nothing to stop.)");
@@ -61,6 +59,9 @@ window.onload = function() {
                 break;
             }
         }
+    }
+    if (typeof start === 'function') {
+        start();
     }
 };
 </script>
