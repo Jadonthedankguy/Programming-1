@@ -1,32 +1,68 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Vowel Checker</title>
-        <script type="text/javascript" src="https://static.codehs.com/gulp/d54aaf6a8d27bce7b597dd025889481c28ebf59b/chs-js-lib/chs.js"></script>
-    </head>
+<head>
+<title>Basic Sets</title>
 
-    <body>
-        <script>
-            checkVowel();
-            var set = new Set();
-            set.add("a");
-            set.add("e")
-            set.add("i");
-            set.add("o");
-            set.add("u");
-            function checkVowel(){
-                while(true){
-                    prompVowel = prompt("Type in a letter here(No Uppercase.)");
-                    if(set.contains(prompVowel) == true){
-                        console.log("This is a vowel");
-                    }else if(set.contains(prompVowel) == false){
-                        console.log("This is not a Vowel");
-                    } 
-                    if(prompVowel == ""){
-                        break;
-                    }
-                }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/1fd1e079bf6be1f1181a6d8af1dadaf6853df435/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Basic Sets</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+    function start(){
+	var set = new Set();
+    set.add("a");
+    set.add("e");
+    set.add("i");
+    set.add("o");
+    set.add("u");
+    function checkVowel(){
+        while(true){
+            Vowelprompt = prompt("Put in any letter here(no capitals.)");
+            if(set.contains(Vowelprompt)){
+                console.log("Letter: " + Vowelprompt + "Yes it is a vowel");
+            }else if(set.contains(Vowelprompt) == false){
+                console.log("Letter " + Vowelprompt + "No it is not a vowel");
             }
-        </script>
-    </body>
+            if(Vowelprompt == ""){
+                break;
+            }
+        }
+    }
+}
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
 </html>
