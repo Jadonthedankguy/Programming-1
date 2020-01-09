@@ -42,6 +42,7 @@ window.onload = function() {
     var DIAGONAL_TOP_LEFT_BOTTOM_RIGHT = 0;
     var DIAGONAL_BOTTOM_LEFT_TOP_RIGHT = 1;
 	var grid = new Grid(2, 2);
+    var colList = [];
 	
     grid.initFromArray([
         [0, 0, 4],
@@ -49,18 +50,16 @@ window.onload = function() {
         [1, 0, 6],
         [1, 1, 10]
     ]);
+
+    for(var i = 0; i < grid.numRows(); i++){
+		for(var i = 0; i < grid.numCols(); i++){
+            
+        }
+	}
 }
 
-    function getDiagonal(grid,whichDiagonal){
-        var colList = [];
 
-        for(var row = 0; row < grid.numRows(); row++){
-		var cur = grid.get(row, whichDiagonal);
-		colList.push(cur);
-
-        printLn(colList);
-	}
-    }
+       
 
     if (typeof start === 'function') {
         start();
