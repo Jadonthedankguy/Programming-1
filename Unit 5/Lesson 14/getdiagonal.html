@@ -38,7 +38,6 @@ class="codehs-editor-canvas"></canvas>
 <script>
 window.onload = function() {
     function start(){
-    getDiagonal(grid,DIAGONAL_BOTTOM_LEFT_TOP_RIGHT);
     var DIAGONAL_TOP_LEFT_BOTTOM_RIGHT = 0;
     var DIAGONAL_BOTTOM_LEFT_TOP_RIGHT = 1;
 	var grid = new Grid(2, 2);
@@ -51,9 +50,10 @@ window.onload = function() {
         [1, 1, 10]
     ]);
 
-    for(var i = 0; i < grid.numRows(); i++){
-		for(var i = 0; i < grid.numCols(); i++){
-            
+    for(var row = 0; row < grid.numRows(); row++){
+		for(var col = 0; col < grid.numCols(); col++){
+            elem = grid.get(row + 1, col + 1);
+            println(elem + " ");
         }
 	}
 }
