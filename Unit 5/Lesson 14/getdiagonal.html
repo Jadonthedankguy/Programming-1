@@ -55,7 +55,9 @@ window.onload = function() {
 
         for(var row = 0; row < grid.numRows(); row++){
 		var cur = grid.get(row, whichDiagonal);
-		rowList.push(cur);
+		colList.push(cur);
+
+        printLn(colList);
 	}
     }
 
