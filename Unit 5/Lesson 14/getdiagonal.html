@@ -38,16 +38,20 @@ class="codehs-editor-canvas"></canvas>
 <script>
 window.onload = function() {
     function start(){
+    var DIAGONAL_TOP_LEFT_BOTTOM_RIGHT = 0;
+    var DIAGONAL_BOTTOM_LEFT_TOP_RIGHT = 1;
 	var grid = new Grid(2, 2);
 	
 	grid.set(0, 0, 4);
 	grid.set(0, 1, 5);
     grid.set(1, 0, 6);
     grid.set(1, 1, 10);
-
-    for()
-	
 }
+
+    function getDiagonal(grid,whichDiagonal){
+        for()
+    }
+
     if (typeof start === 'function') {
         start();
     }
