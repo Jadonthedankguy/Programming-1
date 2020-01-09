@@ -78,21 +78,30 @@ window.onload = function() {
     function start(){
 	var set = new Set();
 	set.add("a");
-	println(set);
+	
 	
 	set.add("e");
-	println(set);
+	
 	
 	set.add("i");
-	println(set);
+	
 
     set.add("o");
 
     set.add("u");
-	
-	if(set.contains(4)){
-		println("4 is in the set!");
-	}
+    
+    while(true){
+        var vowelPrompt = prompt("Put in any letter, and see if it's a vowel! (Don't put in capital letters please!)");
+        if(set.contains(vowelPrompt)){
+            console.log("Yes this is a vowel!");
+        }else if(set.contains(vowelPrompt) == false){
+            console.log("Nope not a vowel!");
+        }
+
+        if(vowelPrompt == ""){
+            break;
+        }
+    }
 	
 	println("Set size: " + set.size());
 }
