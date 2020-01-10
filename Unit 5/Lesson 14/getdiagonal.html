@@ -41,27 +41,24 @@ window.onload = function() {
     var DIAGONAL_TOP_LEFT_BOTTOM_RIGHT = 0;
     var DIAGONAL_BOTTOM_LEFT_TOP_RIGHT = 1;
 	var grid = new Grid(2, 2);
-	
+	getDiagonal(grid);
     grid.initFromArray([
         [4, 2, 5],
         [1, 8, 3],
         [7, 3, 9]
     ]);
     
-    function getDiagonal(grid, diagonals){
+    function getDiagonal(grid){
         diagonalList = [];
-        for(var col = 3; col < grid.getCols(); col--){
-           for(var row = 3; row < grid.getRows(); row--){
+        for(var col = 0; col < grid.getCols(); col++){
+           for(var row = 0; row < grid.getRows(); row--){
                var cur = grid.get(row,col);
                console.log(cur);
            }
         }
             
         }
-	}
     }
-    
-}
 
 
        
