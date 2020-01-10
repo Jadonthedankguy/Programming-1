@@ -38,12 +38,9 @@ class="codehs-editor-canvas"></canvas>
 <script>
 window.onload = function() {
     function start(){
-    var diagonal = getDiagonal(grid, DIAGONAL_BOTTOM_LEFT_TOP_RIGHT);
-    println(diagonal);
     var DIAGONAL_TOP_LEFT_BOTTOM_RIGHT = 0;
     var DIAGONAL_BOTTOM_LEFT_TOP_RIGHT = 1;
 	var grid = new Grid(2, 2);
-    var colList = [];
 	
     grid.initFromArray([
         [4, 2, 5],
@@ -52,10 +49,15 @@ window.onload = function() {
     ]);
     
     function getDiagonal(grid, diagonals){
-        var diagonalList = [];
-        for(var row = 0; row < grid.numRows(); row++){
-        var cur = grid.get(row, diagonals);
-        diagonalList.push(cur);
+        diagonalList = [];
+        for(var col = 3; col < grid.getCols(); col--){
+           for(var row = 3; row < grid.getRows(); row--){
+               var cur = grid.get(row,col);
+               console.log(cur);
+           }
+        }
+            
+        }
 	}
     }
     
