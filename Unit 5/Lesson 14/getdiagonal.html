@@ -38,6 +38,7 @@ class="codehs-editor-canvas"></canvas>
 <script>
 window.onload = function() {
     function start(){
+        getDiagonal(grid, DIAGONAL_BOTTOM_LEFT_TOP_RIGHT);
     var DIAGONAL_TOP_LEFT_BOTTOM_RIGHT = 0;
     var DIAGONAL_BOTTOM_LEFT_TOP_RIGHT = 1;
 	var grid = new Grid(2, 2);
