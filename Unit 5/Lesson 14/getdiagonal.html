@@ -52,9 +52,8 @@ window.onload = function() {
         diagonalList = [];
         for(var col = 0; col < grid.getCols; col++){
            for(var row = 0; row < grid.getRows; row++){
-               println(col);
-               var cur = grid.get(row,col);
-               println(cur);
+               var x = grid.get(row,col);
+               var y = grid.get(row++,col++);
            }
         }
             
